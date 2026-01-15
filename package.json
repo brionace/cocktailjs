@@ -1,0 +1,16 @@
+{
+  "name": "cocktailjs",
+  "version": "0.0.1",
+  "description": "Glass icons and normalization utilities for Smartender",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "assets",
+    "src"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,51 @@
+import React from "react";
+import Svg, { Path, Rect, Ellipse } from "react-native-svg";
+import { Garnishes } from "./Garnishes";
+import GarnishPositioner from "./GarnishPositioner";
+import { getStrokeColor } from "../../utils/theme";
+
+export default function NickAndNoraGlass({
+  liquidFill = null,
+  garnish = null,
+  size = 80,
+  strokeWidth = 0.5,
+}) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 64 64">
+      {/* Small, rounded bowl */}
+      {garnish && <GarnishPositioner glass="NickAndNoraGlass" name={garnish} />}
+      {/* Bowl with more curved top */}
+
+      <Path
+        d="M24 38 L24 24 L40 24 L40 38 Q32 40 24 38 Z"
+        transform="scale(0.98)"
+        className="liquid"
+        opacity={0.7}
+        fill={liquidFill}
+      />
+      <Path
+        d="M24 38 L24 24 L40 24 L40 38 Q32 40 24 38 Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={strokeWidth}
+      />
+      {/* Elongated stem */}
+      <Rect
+        x={32}
+        y={39}
+        width={1}
+        height={16}
+        fill="currentColor"
+        stroke="currentColor"
+        strokeWidth={strokeWidth}
+      />
+      {/* Curved base (Absinthe-style) attached to stem bottom */}
+      <Path
+        d=" M24 55 Q32 54 40 55 L40 55 L24 55 Z "
+        fill="currentColor"
+        stroke="currentColor"
+        strokeWidth={strokeWidth}
+      />
+    </Svg>
+  );
+}
