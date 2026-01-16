@@ -7,7 +7,7 @@ Minimal UI utilities and components package for CocktailJS.
 Require the package:
 
 ```js
-const cocktailUI = require("@cocktailjs/cocktail-ui");
+const cocktailUI = require("@bace51/cocktail-ui");
 console.log(cocktailUI.name);
 ```
 
