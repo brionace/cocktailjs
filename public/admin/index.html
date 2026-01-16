@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Smartender Assets Admin</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      body {
+        font-family: system-ui, -apple-system, Arial, sans-serif;
+        padding: 16px;
+      }
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .card {
+        width: 160px;
+        border: 1px solid #eee;
+        padding: 8px;
+        border-radius: 6px;
+      }
+      .svg-thumb {
+        position: relative;
+        width: 140px;
+        height: 80px;
+        background: #fafafa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .grid .card svg {
+        width: 100px !important;
+        height: 100px !important;
+        display: block; /* remove inline whitespace */
+        max-width: none; /* allow explicit sizing */
+      }
+      textarea {
+        width: 100%;
+        height: 80px;
+      }
+      input[type="text"] {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Assets Admin</h1>
+    <p>
+      List and edit glasses and garnishes. Changes persist to the assets
+      manifest and SVG files.
+    </p>
+
+    <h2>Glasses</h2>
+    <div id="glasses" class="grid"></div>
+
+    <h2>Garnishes</h2>
+    <div id="garnishes" class="grid"></div>
+
+    <script src="/admin/admin.js"></script>
+  </body>
+</html>

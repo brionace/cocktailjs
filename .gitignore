@@ -1,0 +1,34 @@
+# Node
+node_modules/
+packages/*/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+package-lock.json
+
+# Build
+dist/
+coverage/
+.nyc_output/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# macOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Editor directories
+.vscode/
+.idea/
+
+# Misc
+*.tgz
+.pnp
+.pnp.js

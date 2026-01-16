@@ -29,6 +29,35 @@ watcher.on("change", (file) => {
       if (err) console.error("render error", err);
       if (stdout) process.stdout.write(stdout);
       if (stderr) process.stderr.write(stderr);
+      // rebuild manifest after render
+      try {
+        const fs = require("fs");
+        const path = require("path");
+        const svgsRoot = path.join("public", "svgs");
+        function walk(dir, obj) {
+          for (const name of fs.readdirSync(dir)) {
+            const p = path.join(dir, name);
+            if (fs.statSync(p).isDirectory()) {
+              walk(p, obj);
+            } else if (name.endsWith(".svg")) {
+              const relp = path.relative(svgsRoot, p).replace(/\\\\/g, "/");
+              const key = relp.replace(/\.svg$/i, "");
+              obj[key] = `/svgs/${relp}`;
+            }
+          }
+        }
+        const manifest = {};
+        if (fs.existsSync(svgsRoot)) walk(svgsRoot, manifest);
+        const manifestPath = path.join("public", "svgs", "manifest.json");
+        fs.writeFileSync(
+          manifestPath,
+          JSON.stringify(manifest, null, 2),
+          "utf8"
+        );
+        console.log("Updated", manifestPath);
+      } catch (e) {
+        console.error("Failed to update manifest", e);
+      }
     }
   );
 });

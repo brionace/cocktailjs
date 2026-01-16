@@ -1,0 +1,11 @@
+*
+!index.js
+!README.md
+!package.json
+
+node_modules/
+dist/
+src/
+tests/
+.git
+.github
