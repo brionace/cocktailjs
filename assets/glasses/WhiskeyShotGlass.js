@@ -15,7 +15,7 @@ export default function WhiskeyShotGlass({
         y={30}
         width={20}
         height={18}
-        rx={1}
+        // rx={1}
         stroke="currentColor"
         fill="none"
         strokeWidth={strokeWidth}
