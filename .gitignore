@@ -32,3 +32,6 @@ logs/
 *.tgz
 .pnp
 .pnp.js
+
+# Temporary files
+.tmp_render/

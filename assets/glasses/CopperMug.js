@@ -1,10 +1,9 @@
-import Svg, { Rect, Path, Line } from "react-native-svg";
-import { getStrokeColor } from "../../utils/theme";
+import Svg, { Path, Line } from "react-native-svg";
 
 export default function CopperMug({
-  liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  fill = "#B87333",
 }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64">
@@ -12,7 +11,7 @@ export default function CopperMug({
       <Path
         d="M47 23 C68 23 68 52 46.5 50"
         fill="none"
-        stroke="currentColor"
+        stroke={fill}
         strokeWidth={strokeWidth + 2}
       />
       {/* Bulging mug body */}
@@ -26,9 +25,7 @@ export default function CopperMug({
           Z
         "
         transform="scale(0.98)"
-        className="liquid"
-        opacity={0.7}
-        fill="currentColor"
+        fill={fill}
       />
 
       <Path
@@ -41,7 +38,7 @@ export default function CopperMug({
           Z
         "
         fill="none"
-        stroke="currentColor"
+        stroke={fill}
         strokeWidth={strokeWidth}
       />
 
@@ -51,7 +48,7 @@ export default function CopperMug({
         y1={16}
         x2={46}
         y2={16}
-        stroke="currentColor"
+        stroke={fill}
         strokeWidth={strokeWidth}
       />
     </Svg>

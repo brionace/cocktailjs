@@ -1,4 +1,5 @@
 import Svg, { Path, Rect, Ellipse } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function ParfaitGlass({
@@ -8,7 +9,22 @@ export default function ParfaitGlass({
 }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64">
-      {/* Tall tapered bowl: liquid (rendered first) */}
+      {/* Tall tapered bowl liquid (via Liquid component) */}
+      <Liquid
+        d={`
+          M22 12
+          L42 12
+          Q40 30 38 44
+          Q32 50 26 44
+          Q24 30 22 12
+          Z
+        `}
+        transform="scale(0.98)"
+        idBase="ParfaitGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Path
         d="
           M22 12
@@ -23,6 +39,7 @@ export default function ParfaitGlass({
         transform="scale(0.98)"
         fill={liquidFill}
       />
+      */}
 
       {/* Tall tapered bowl outline (stroke-only) */}
       <Path

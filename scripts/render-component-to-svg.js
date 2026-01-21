@@ -20,13 +20,71 @@ async function main() {
   }
 
   const absComp = path.resolve(compPath);
-  // clear any cached versions
-  delete require.cache[require.resolve(absComp)];
+
+  // Transpile to CommonJS into .tmp_render to avoid import interop/runtime JSX issues
+  const babel = require("@babel/core");
+  const tmpRoot = path.join(process.cwd(), ".tmp_render");
+  const rel = path.relative(process.cwd(), absComp);
+  const tmpPath = path.join(tmpRoot, rel);
+  try {
+    await fs.promises.mkdir(path.dirname(tmpPath), { recursive: true });
+    const result = babel.transformFileSync(absComp, {
+      filename: absComp,
+      configFile: true,
+      babelrc: true,
+      ast: false,
+      sourceMaps: false,
+    });
+    if (!result || !result.code) throw new Error("Babel transform failed");
+    await fs.promises.writeFile(tmpPath, result.code, "utf8");
+    // Mirror project-local helper directories (e.g., utils) so relative
+    // imports inside transpiled modules resolve to real files.
+    const srcUtils = path.join(process.cwd(), "utils");
+    const destUtils = path.join(process.cwd(), ".tmp_render", "utils");
+    try {
+      if (fs.existsSync(srcUtils)) {
+        // use recursive copy if available
+        if (fs.promises.cp) {
+          await fs.promises.cp(srcUtils, destUtils, { recursive: true });
+        } else {
+          // fallback: simple recursive copy
+          const copyRecursive = async (src, dest) => {
+            const stat = await fs.promises.stat(src);
+            if (stat.isDirectory()) {
+              await fs.promises.mkdir(dest, { recursive: true });
+              const items = await fs.promises.readdir(src);
+              for (const it of items)
+                await copyRecursive(path.join(src, it), path.join(dest, it));
+            } else {
+              await fs.promises.copyFile(src, dest);
+            }
+          };
+          await copyRecursive(srcUtils, destUtils);
+        }
+      }
+    } catch (e) {
+      // Non-fatal: proceed even if copying helpers fails
+      console.warn(
+        "Warning: failed to mirror utils into .tmp_render:",
+        e && e.message ? e.message : e
+      );
+    }
+  } catch (err) {
+    console.error(
+      "Error transpiling component:",
+      err && err.message ? err.message : String(err)
+    );
+    console.error(err && err.stack ? err.stack : err);
+    process.exit(1);
+  }
+
+  // clear any cached versions and require the transpiled file
+  delete require.cache[require.resolve(tmpPath)];
   let mod;
   try {
-    mod = require(absComp);
+    mod = require(tmpPath);
   } catch (err) {
-    console.error("Error requiring component:", err.message);
+    console.error("Error requiring transpiled component:", err.message);
     console.error(err.stack);
     process.exit(1);
   }

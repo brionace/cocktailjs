@@ -1,4 +1,5 @@
 import Svg, { Rect, Path, G } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function TankardGlass({
@@ -13,7 +14,15 @@ export default function TankardGlass({
 
       {/* Outer body (thick glass) */}
 
-      {/* Inner wall (glass thickness + content area) rendered before outline */}
+      {/* Inner wall liquid (via Liquid component) */}
+      <Liquid
+        d={`M14 10 L48 10 L48 44 L14 44 Z`}
+        transform="scale(0.98)"
+        idBase="TankardGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original inner wall liquid (commented out)
       <Rect
         x={14}
         y={10}
@@ -24,6 +33,7 @@ export default function TankardGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
 
       <Rect
         x={14}

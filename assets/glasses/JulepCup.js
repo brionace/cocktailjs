@@ -1,8 +1,7 @@
 import Svg, { Path, Rect } from "react-native-svg";
-import { getStrokeColor } from "../../utils/theme";
 
 export default function JulepCup({
-  liquidFill = null,
+  fill = "#B87333",
   size = 80,
   strokeWidth = 0.5,
 }) {
@@ -16,7 +15,7 @@ export default function JulepCup({
         height={1}
         rx={1}
         fill="none"
-        stroke="currentColor"
+        stroke={fill}
         strokeWidth={strokeWidth}
       />
       <Rect
@@ -26,9 +25,8 @@ export default function JulepCup({
         height={1}
         rx={1}
         transform="scale(0.98)"
-        className="liquid"
         opacity={0.7}
-        fill="currentColor"
+        fill={fill}
         strokeWidth={0}
       />
 
@@ -42,7 +40,7 @@ export default function JulepCup({
           Z
         "
         fill="none"
-        stroke="currentColor"
+        stroke={fill}
         strokeWidth={strokeWidth}
       />
       <Path
@@ -54,9 +52,7 @@ export default function JulepCup({
           Z
         "
         transform="scale(0.98)"
-        className="liquid"
-        opacity={0.7}
-        fill={liquidFill}
+        fill={fill}
       />
 
       {/* Base ring (metal foot) */}
@@ -67,7 +63,7 @@ export default function JulepCup({
         height={1}
         rx={strokeWidth}
         fill="none"
-        stroke="currentColor"
+        stroke={fill}
         strokeWidth={strokeWidth}
       />
       <Rect
@@ -77,9 +73,7 @@ export default function JulepCup({
         height={1}
         rx={strokeWidth}
         transform="scale(0.98)"
-        className="liquid"
-        opacity={0.7}
-        fill={liquidFill}
+        fill={fill}
         strokeWidth={0}
       />
 
@@ -91,7 +85,7 @@ export default function JulepCup({
         height={1}
         rx={strokeWidth}
         fill="none"
-        stroke="currentColor"
+        stroke={fill}
         strokeWidth={strokeWidth}
       />
       <Rect
@@ -101,9 +95,7 @@ export default function JulepCup({
         height={1}
         rx={strokeWidth}
         transform="scale(0.98)"
-        className="liquid"
-        opacity={0.7}
-        fill={liquidFill}
+        fill={fill}
         strokeWidth={0}
       />
     </Svg>

@@ -1,4 +1,5 @@
 import Svg, { Path, Rect, Line } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function SnifterGlass({
@@ -31,7 +32,15 @@ export default function SnifterGlass({
         fill="none"
       />
 
-      {/* Liquid filling the bowl (follows the bowl sides to the rim) */}
+      {/* Liquid filling the bowl (via Liquid component) */}
+      <Liquid
+        d={` M22 18 C16 32, 16 46, 32 52 C48 46, 48 32, 42 18 Z `}
+        transform="scale(0.98)"
+        idBase="SnifterGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Path
         d=" M22 18 C16 32, 16 46, 32 52 C48 46, 48 32, 42 18 Z "
         transform="scale(0.98)"
@@ -39,6 +48,7 @@ export default function SnifterGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
 
       {/* Short stem (use theme stroke color) */}
       <Rect

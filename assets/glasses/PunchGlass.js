@@ -1,4 +1,5 @@
 import Svg, { Path, Rect, Ellipse, G } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function PunchGlass({
@@ -9,7 +10,22 @@ export default function PunchGlass({
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64">
       <G>
-        {/* Compact bowl with flat rim (smaller than earlier) */}
+        {/* Compact bowl liquid (via Liquid component) */}
+        <Liquid
+          d={`
+            M22 18
+            L42 18
+            L38 30
+            Q32 34 26 30
+            L22 18
+            Z
+          `}
+          transform="scale(0.98)"
+          idBase="PunchGlassGrad"
+          opacity={0.7}
+          liquidFill={liquidFill}
+        />
+        {/* Original liquid (commented out)
         <Path
           d={`
             M22 18
@@ -24,6 +40,7 @@ export default function PunchGlass({
           opacity={0.7}
           fill={liquidFill}
         />
+        */}
         <Path
           d={`
             M22 18

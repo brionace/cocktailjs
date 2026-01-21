@@ -8,6 +8,18 @@ Next steps:
 2. Run `pnpm install` and `pnpm run build` to verify the package builds.
 3. Update CI to publish the package (or deploy assets to a CDN).
 
+# run the patch (if you change the script)
+
+node scripts/patch-glasses-liquids.js
+
+# rebuild svgs (regenerates .tmp_render from assets and writes public/svgs)
+
+node scripts/render-components-to-svgs.cjs
+
+# quick validation
+
+node scripts/check-manifest-svgs.js
+
 <!-- Steps to publish to npm -->
 
 cd packages/cocktail-ui
@@ -37,5 +49,7 @@ const pkg = require('@bace51/cocktail-ui');
 console.log(Object.keys(pkg.assets || {})); // or pkg.get('garnishes/Basil')
 
 # init npm in order to publish
+
 <!-- https://docs.npmjs.com/creating-and-publishing-private-packages -->
+
 npm init --scope=@my-org

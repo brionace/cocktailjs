@@ -1,4 +1,5 @@
 import Svg, { Path, Rect, Line } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function GobletGlass({
@@ -20,7 +21,15 @@ export default function GobletGlass({
         stroke="currentColor"
         strokeWidth={strokeWidth}
       />
-      {/* Deep rounded goblet bowl */}
+      {/* Deep rounded goblet bowl (via Liquid component) */}
+      <Liquid
+        d={` M19 28 L46 28 Q52 58 32 70 Q12 58 16 28 Z `}
+        transform="scale(0.98)"
+        idBase="GobletGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Path
         d=" M19 28 L46 28 Q52 58 32 70 Q12 58 16 28 Z "
         transform="scale(0.98)"
@@ -28,6 +37,7 @@ export default function GobletGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
       <Path
         d="
           M16 28           

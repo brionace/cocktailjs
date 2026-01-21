@@ -1,4 +1,5 @@
 import Svg, { Path, Rect, Line } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function SlingGlass({
@@ -20,7 +21,15 @@ export default function SlingGlass({
 
       {/* Tall, narrow, slightly fluted bowl that widens toward the rim */}
 
-      {/* Liquid inset for depth (rendered before outline) */}
+      {/* Liquid inset for depth (via Liquid component) */}
+      <Liquid
+        d={`M25 12 L40 12 C41 29 40 46 32 55 C24 46 24 28 24 12 Z`}
+        transform="scale(0.98)"
+        idBase="SlingGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Path
         d="M25 12 L40 12 C41 29 40 46 32 55 C24 46 24 28 24 12 Z"
         transform="scale(0.98)"
@@ -28,6 +37,7 @@ export default function SlingGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
 
       <Path
         d="M25 12 L40 12 C41 29 40 46 32 55 C24 46 24 28 24 12 Z"

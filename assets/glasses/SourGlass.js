@@ -1,4 +1,5 @@
 import Svg, { Path, Rect, Line } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function SourGlass({
@@ -20,7 +21,21 @@ export default function SourGlass({
 
       {/* Outer bowl with rounded sides, flat top, curving into stem */}
 
-      {/* Liquid inside, following bowl curvature (rendered before outline) */}
+      {/* Liquid inside, following bowl curvature */}
+      <Liquid
+        d={`
+          M16 18
+          L48 18
+          C46 30, 46 38, 32 42
+          C18 38, 18 30, 16 18
+          Z
+        `}
+        transform="scale(0.98)"
+        idBase="SourGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Path
         d="
           M16 18
@@ -34,6 +49,7 @@ export default function SourGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
       <Path
         d="
           M16 18

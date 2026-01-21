@@ -1,4 +1,5 @@
 import Svg, { Path, Rect } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function FizzGlass({
@@ -13,7 +14,17 @@ export default function FizzGlass({
 
       {/* Straight-sided tall bowl */}
 
-      {/* Liquid (fills ~80% of glass) rendered before the outline */}
+      {/* Liquid (fills ~80% of glass) */}
+      <Liquid
+        d={`
+          M22 10 L24 23 L40 23 L42 10 Z 
+        `}
+        transform="scale(0.98)"
+        idBase="FizzGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Path
         d="
           M22 10 L24 23 L40 23 L42 10 Z 
@@ -23,6 +34,7 @@ export default function FizzGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
 
       <Path
         d="

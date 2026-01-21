@@ -1,4 +1,5 @@
 import Svg, { Path, Rect } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function IrishCoffeeGlass({
@@ -16,7 +17,22 @@ export default function IrishCoffeeGlass({
         fill="none"
       />
 
-      {/* Tall cylindrical bowl with slight outward flare */}
+      {/* Tall cylindrical bowl liquid (via Liquid component) */}
+      <Liquid
+        d={`
+            M22 16
+            L42 16
+            L44 30
+            Q44 38 32 42
+            Q20 38 20 30
+            Z
+          `}
+        transform="scale(0.98)"
+        idBase="IrishCoffeeGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Path
         d="
             M22 16
@@ -31,6 +47,7 @@ export default function IrishCoffeeGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
       <Path
         d="
             M22 16

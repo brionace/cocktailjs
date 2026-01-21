@@ -33,22 +33,39 @@ watcher.on("change", (file) => {
       try {
         const fs = require("fs");
         const path = require("path");
-        const svgsRoot = path.join("public", "svgs");
-        function walk(dir, obj) {
-          for (const name of fs.readdirSync(dir)) {
-            const p = path.join(dir, name);
-            if (fs.statSync(p).isDirectory()) {
-              walk(p, obj);
-            } else if (name.endsWith(".svg")) {
-              const relp = path.relative(svgsRoot, p).replace(/\\\\/g, "/");
-              const key = relp.replace(/\.svg$/i, "");
-              obj[key] = `/svgs/${relp}`;
+
+        // Prefer authoritative source: assets directory listing.
+        // This prevents stale or auxiliary SVGs in public/svgs (like
+        // GlassTemplate.svg or legacy Coupe.svg) from being exposed as
+        // canonical assets. We map each asset file under assets/<type>
+        // to public/svgs/<type>/<Base>.svg when present.
+        const assetsRoot = path.join(process.cwd(), "assets");
+        const svgsRoot = path.join(process.cwd(), "public", "svgs");
+        const manifest = {};
+
+        for (const type of ["glasses", "garnishes"]) {
+          const srcDir = path.join(assetsRoot, type);
+          if (!fs.existsSync(srcDir)) continue;
+          manifest[type] = manifest[type] || {};
+          for (const name of fs.readdirSync(srcDir)) {
+            const ext = path.extname(name).toLowerCase();
+            if (![".js", ".jsx", ".ts", ".tsx"].includes(ext)) continue;
+            const base = path.basename(name, ext);
+            const candidate = path.join(svgsRoot, type, `${base}.svg`);
+            if (fs.existsSync(candidate)) {
+              const relp = path
+                .relative(svgsRoot, candidate)
+                .replace(/\\\\/g, "/");
+              manifest[type][base] = { svgPath: `/svgs/${relp}` };
+            } else {
+              // if svg not present yet, still include placeholder (optional)
+              manifest[type][base] = null;
             }
           }
         }
-        const manifest = {};
-        if (fs.existsSync(svgsRoot)) walk(svgsRoot, manifest);
+
         const manifestPath = path.join("public", "svgs", "manifest.json");
+        fs.mkdirSync(path.dirname(manifestPath), { recursive: true });
         fs.writeFileSync(
           manifestPath,
           JSON.stringify(manifest, null, 2),

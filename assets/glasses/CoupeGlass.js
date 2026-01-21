@@ -1,4 +1,5 @@
 import Svg, { Path } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function CoupeGlass({
@@ -10,7 +11,17 @@ export default function CoupeGlass({
     <Svg width={size} height={size} viewBox="0 0 64 64">
       {/* Outer bowl */}
 
-      {/* Liquid (rendered before the outline) */}
+      {/* Liquid (via Liquid component) */}
+      <Liquid
+        d={`
+          M12 32 Q32 36 52 32 L52 18 Q32 18 12 18 Z 
+        `}
+        transform="scale(0.98)"
+        idBase="CoupeGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Path
         d="
           M12 32 Q32 36 52 32 L52 18 Q32 18 12 18 Z 
@@ -20,6 +31,7 @@ export default function CoupeGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
 
       <Path
         d="

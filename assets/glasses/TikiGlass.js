@@ -1,4 +1,5 @@
 import Svg, { Path, Rect, Ellipse } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function TikiGlass({
@@ -33,6 +34,15 @@ export default function TikiGlass({
         fill="none"
         opacity={0.9}
       />
+      {/* Body liquid (via Liquid component) */}
+      <Liquid
+        d={`M21 9 L41 9 L41 51 L21 51 Z`}
+        transform="scale(0.98)"
+        idBase="TikiGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Rect
         x={21}
         y={9}
@@ -42,6 +52,7 @@ export default function TikiGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
 
       {/* Tiki face (simple) */}
       <Ellipse cx={32} cy={32} rx={6} ry={3} fill="currentColor" />

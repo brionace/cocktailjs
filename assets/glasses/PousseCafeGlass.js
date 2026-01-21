@@ -1,5 +1,6 @@
 import React from "react";
 import Svg, { Path, Rect, G } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function PousseCafeGlass({
@@ -13,7 +14,21 @@ export default function PousseCafeGlass({
   return (
     <Svg width={size} height={height} viewBox="0 0 64 90">
       <G>
-        {/* Bowl liquid (rendered first so stroke appears on top) */}
+        {/* Bowl liquid (rendered via Liquid component) */}
+        <Liquid
+          d={`
+            M ${cx - 11} 12
+            L ${cx + 11} 12
+            L ${cx + 9} 38
+            Q ${cx} 42 ${cx - 9} 38
+            Z
+          `}
+          transform="scale(0.98)"
+          idBase="PousseCafeGlassGrad"
+          opacity={0.7}
+          liquidFill={liquidFill}
+        />
+        {/* Original bowl liquid (commented out)
         <Path
           d={`
             M ${cx - 11} 12
@@ -27,6 +42,7 @@ export default function PousseCafeGlass({
           opacity={0.7}
           fill={liquidFill}
         />
+        */}
 
         {/* Bowl outline (stroke-only) */}
         <Path

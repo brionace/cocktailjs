@@ -1,4 +1,5 @@
 import Svg, { Rect, Line } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function RocksGlass({
@@ -8,7 +9,15 @@ export default function RocksGlass({
 }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64">
-      {/* Liquid */}
+      {/* Combined liquid (fills interior) */}
+      <Liquid
+        d={`M14 24 L50 24 L50 58 L14 58 Z`}
+        transform="scale(0.98)"
+        idBase="RocksGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Rect
         x={14}
         y={24}
@@ -19,6 +28,7 @@ export default function RocksGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
       {/* Glass outline */}
       <Rect
         x={14}

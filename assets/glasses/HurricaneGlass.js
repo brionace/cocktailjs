@@ -1,5 +1,6 @@
 import React from "react";
 import Svg, { Path, Rect } from "react-native-svg";
+import Liquid from "../Liquid";
 import GarnishPositioner from "./GarnishPositioner";
 import { getStrokeColor } from "../../utils/theme";
 
@@ -13,7 +14,15 @@ export default function HurricaneGlass({
     <Svg width={size} height={size} viewBox="0 0 64 64">
       {/* Curved bowl */}
       <GarnishPositioner glass="HurricaneGlass" name={garnish} />
-      {/* Liquid inside (rendered before outline) */}
+      {/* Liquid inside (via Liquid component) */}
+      <Liquid
+        d={`M24 10 C16 22, 24 38, 28 44 C30 48, 34 48, 36 44 C40 38, 48 22, 40 10 Z`}
+        transform="scale(0.98)"
+        idBase="HurricaneGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Path
         d="M24 10 C16 22, 24 38, 28 44 C30 48, 34 48, 36 44 C40 38, 48 22, 40 10 Z"
         transform="scale(0.98)"
@@ -21,6 +30,7 @@ export default function HurricaneGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
       <Path
         d="M24 10 C16 22, 24 38, 28 44 C30 48, 34 48, 36 44 C40 38, 48 22, 40 10 Z"
         stroke="currentColor"

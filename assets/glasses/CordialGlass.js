@@ -1,16 +1,26 @@
 import Svg, { Path, Rect } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function CordialGlass({ liquidFill = null, strokeWidth = 0.5 }) {
   return (
     <Svg viewBox="0 0 64 64">
-      {/* Bowl / cup */}
+      {/* Bowl / cup liquid (via Liquid component) */}
+      <Liquid
+        d={`M30 16 L35 16 Q34 25 31 26 Q30 26 28 16 Z`}
+        transform="scale(0.98)"
+        idBase="CordialGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original bowl liquid (commented out)
       <Path
         d="M30 16 L35 16 Q34 25 31 26 Q30 26 28 16 Z"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
       <Path
         d="M28 16 L36 16 Q34 26 32 26 Q30 26 28 16 Z"
         stroke="currentColor"

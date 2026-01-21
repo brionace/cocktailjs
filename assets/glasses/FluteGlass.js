@@ -1,4 +1,5 @@
 import Svg, { Path, Rect } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function FluteGlass({
@@ -10,7 +11,21 @@ export default function FluteGlass({
     <Svg width={size} height={size} viewBox="0 0 64 64">
       {/* Correct flute bowl: narrow top → wider middle → narrow base */}
 
-      {/* Liquid filling the bowl (3/4 full) rendered before outline */}
+      {/* Liquid filling the bowl (3/4 full) */}
+      <Liquid
+        d={`
+          M30 12        
+          L34 12       
+          L36 36    
+          Q32 38 28 36 
+          Z
+        `}
+        transform="scale(0.98)"
+        idBase="FluteGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Path
         d="
           M30 12        
@@ -24,6 +39,7 @@ export default function FluteGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
 
       <Path
         d="

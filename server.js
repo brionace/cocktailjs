@@ -10,6 +10,38 @@ const publicDir = path.join(__dirname, "public");
 const svgsDir = path.join(publicDir, "svgs");
 const manifestPath = path.join(svgsDir, "manifest.json");
 
+// Load and normalize manifest.json. Accepts both nested shape:
+// { glasses: { Name: { ... } }, garnishes: { ... } }
+// and flat keys shape: { "glasses/Name": "/svgs/..." }
+function loadManifest() {
+  if (!fs.existsSync(manifestPath)) return {};
+  try {
+    const raw = JSON.parse(fs.readFileSync(manifestPath, "utf8") || "{}");
+    const keys = Object.keys(raw || {});
+    // detect flat shape (keys like "glasses/Name")
+    if (keys.length && keys[0].includes("/")) {
+      const normalized = {};
+      for (const [k, v] of Object.entries(raw)) {
+        const parts = k.split("/");
+        if (parts.length !== 2) continue;
+        const [type, name] = parts;
+        if (!normalized[type]) normalized[type] = {};
+        // If value is a string path, convert to entry shape { svgPath }
+        if (typeof v === "string") {
+          normalized[type][name] = { svgPath: v };
+        } else {
+          normalized[type][name] = v;
+        }
+      }
+      return normalized;
+    }
+    return raw;
+  } catch (e) {
+    console.error("Failed to parse manifest.json", e);
+    return {};
+  }
+}
+
 app.use(express.json());
 app.use(express.static(publicDir));
 
@@ -17,20 +49,23 @@ app.get("/api/assets", (req, res) => {
   try {
     const includeSvg =
       req.query.includeSvg === "1" || req.query.includeSvg === "true";
-    const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+    const manifest = loadManifest();
     if (includeSvg) {
-      // embed svg content for each entry
-      const out = { glasses: {}, garnishes: {} };
+      // embed svg content for each entry; preserve manifest shape
+      const out = {};
       for (const type of Object.keys(manifest)) {
+        out[type] = out[type] || {};
         for (const key of Object.keys(manifest[type])) {
           const entry = Object.assign({}, manifest[type][key]);
           try {
-            const svgFile = path.join(
-              publicDir,
-              entry.svgPath.replace(/^\//, "")
-            );
-            if (fs.existsSync(svgFile))
-              entry.svg = fs.readFileSync(svgFile, "utf8");
+            if (entry && entry.svgPath) {
+              const svgFile = path.join(
+                publicDir,
+                entry.svgPath.replace(/^\//, "")
+              );
+              if (fs.existsSync(svgFile))
+                entry.svg = fs.readFileSync(svgFile, "utf8");
+            }
           } catch (e) {
             // ignore read errors
           }
@@ -50,7 +85,7 @@ app.get("/api/assets/:type/:name", (req, res) => {
   try {
     const includeSvg =
       req.query.includeSvg === "1" || req.query.includeSvg === "true";
-    const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+    const manifest = loadManifest();
     const { type, name } = req.params;
     if (!manifest[type] || !manifest[type][name])
       return res.status(404).json({ error: "Not found" });
@@ -71,7 +106,7 @@ app.get("/api/assets/:type/:name", (req, res) => {
 // PUT update single asset (blurb and/or svg)
 app.put("/api/assets/:type/:name", (req, res) => {
   try {
-    const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+    const manifest = loadManifest();
     const { type, name } = req.params;
     if (!manifest[type] || !manifest[type][name])
       return res.status(404).json({ error: "Not found" });
@@ -87,8 +122,13 @@ app.put("/api/assets/:type/:name", (req, res) => {
       fs.writeFileSync(targetPath, svg, "utf8");
       entry.svgPath = `/svgs/${type}/${name}.svg`;
     }
-    // write manifest back
-    fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), "utf8");
+    // write manifest back (normalized nested shape)
+    try {
+      fs.mkdirSync(svgsDir, { recursive: true });
+      fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), "utf8");
+    } catch (e) {
+      console.error("Failed to write manifest", e);
+    }
     const out = Object.assign({}, entry);
     if (typeof svg === "string") out.svg = svg;
     return res.json({ status: "ok", asset: out });

@@ -1,4 +1,5 @@
 import Svg, { Rect, Line } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function HighballGlass({
@@ -10,7 +11,15 @@ export default function HighballGlass({
     <Svg width={size} height={size} viewBox="0 0 64 64">
       {/* Glass outline */}
 
-      {/* Cocktail liquid (rendered before outline) */}
+      {/* Cocktail liquid (via Liquid component) */}
+      <Liquid
+        d={`M18 10 L46 10 L46 60 L18 60 Z`}
+        transform="scale(0.98)"
+        idBase="HighballGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Rect
         x={18}
         y={10}
@@ -21,6 +30,7 @@ export default function HighballGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
       <Rect
         x={18}
         y={10}

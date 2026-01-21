@@ -19,6 +19,8 @@
     "build": "pnpm run build:ui && pnpm run build:root",
     "dev:ui": "pnpm --filter ./packages/cocktail-ui... run dev || echo \"no dev script for cocktail-ui\"",
     "dev": "sh -c \"node server.js & node -r @babel/register scripts/watch-and-render.js\"",
+    "render:svgs": "node scripts/render-components-to-svgs.cjs",
+    "check:svgs": "node scripts/check-manifest-svgs.js",
     "start": "node server.js"
   },
   "license": "MIT",
@@ -26,6 +28,9 @@
     "express": "^4.18.2",
     "@babel/register": "^7.22.5",
     "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
     "chokidar": "^3.5.3",
     "fs-extra": "^11.1.1"
   }

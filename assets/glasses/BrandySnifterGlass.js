@@ -1,12 +1,39 @@
 import Svg, { Path, Rect, Line } from "react-native-svg";
-import { getStrokeColor } from "../../utils/theme";
+import Liquid from "../Liquid";
 
 export default function BrandySnifterGlass({
-  liquidFill = null,
+  liquidFill = ["#F6D29A", "#D98F3A"],
   strokeWidth = 1,
 }) {
   return (
     <Svg viewBox="0 0 64 64">
+      {/* Combined liquid (single element covering top + bottom bowls) */}
+      <Liquid
+        d={`M22 28 
+          L42 28 
+          L44 48 
+          Q32 52 20 48 
+          Z`}
+        transform="scale(0.98)"
+        idBase="BrandySnifterGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Liquid inside the bowl */}
+      {/* <Path
+        d="
+          M22 28 
+          L42 28 
+          L44 48 
+          Q32 52 20 48 
+          Z
+        "
+        transform="scale(0.98)"
+        className="liquid"
+        opacity={0.7}
+        fill={liquidFill}
+      /> */}
+
       {/* Flat bowl with curved bottom corners */}
       <Path
         d="
@@ -19,21 +46,6 @@ export default function BrandySnifterGlass({
         fill="none"
         stroke="currentColor"
         strokeWidth={strokeWidth}
-      />
-
-      {/* Liquid inside the bowl */}
-      <Path
-        d="
-          M22 28 
-          L42 28 
-          L44 48 
-          Q32 52 20 48 
-          Z
-        "
-        transform="scale(0.98)"
-        className="liquid"
-        opacity={0.7}
-        fill={liquidFill}
       />
 
       {/* Rim (top line) */}

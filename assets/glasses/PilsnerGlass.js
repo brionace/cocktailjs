@@ -1,4 +1,5 @@
 import Svg, { Path } from "react-native-svg";
+import Liquid from "../Liquid";
 
 export default function PilsnerGlass({
   liquidFill = null,
@@ -7,7 +8,15 @@ export default function PilsnerGlass({
 }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64">
-      {/* Liquid (rendered first) */}
+      {/* Liquid (via Liquid component) */}
+      <Liquid
+        d={`M24 10 L40 10 Q38 36 36 50 Q32 54 28 50 Q26 36 24 10 Z`}
+        transform="scale(0.98)"
+        idBase="PilsnerGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Path
         d="M24 10 L40 10 Q38 36 36 50 Q32 54 28 50 Q26 36 24 10 Z"
         transform="scale(0.98)"
@@ -15,6 +24,7 @@ export default function PilsnerGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
 
       {/* Thick curved base inset between liquid and bottom stroke */}
       <Path

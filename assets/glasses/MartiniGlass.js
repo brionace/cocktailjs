@@ -1,5 +1,6 @@
 import React from "react";
 import Svg, { Path } from "react-native-svg";
+import Liquid from "../Liquid";
 import { Garnishes } from "./Garnishes";
 import GarnishPositioner from "./GarnishPositioner";
 import { getStrokeColor } from "../../utils/theme";
@@ -15,7 +16,15 @@ export default function MartiniGlass({
       {/* Garnish (positioned) */}
       {garnish && <GarnishPositioner glass="MartiniGlass" name={garnish} />}
 
-      {/* Cocktail liquid */}
+      {/* Cocktail liquid (filled via Liquid component) */}
+      <Liquid
+        d={`M10 10 L54 10 L32 40 Z`}
+        transform="scale(0.98)"
+        idBase="MartiniGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original cocktail liquid (commented out)
       <Path
         d="M10 10 L54 10 L32 40 Z"
         transform="scale(0.98)"
@@ -23,6 +32,7 @@ export default function MartiniGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
 
       {/* Glass outline */}
       <Path

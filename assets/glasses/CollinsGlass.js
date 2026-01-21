@@ -1,9 +1,32 @@
 import Svg, { Rect, Line } from "react-native-svg";
-import { getStrokeColor } from "../../utils/theme";
+import Liquid from "../Liquid";
 
-export default function CollinsGlass({ liquidFill = null, strokeWidth = 0.5 }) {
+export default function CollinsGlass({
+  liquidFill = ["#FFF7C0", "#FFD27A"],
+  strokeWidth = 0.5,
+}) {
   return (
     <Svg viewBox="0 0 64 64">
+      <Liquid
+        d={`M22 10 L42 10 L42 54 L22 54 Z`}
+        transform="scale(0.98)"
+        idBase="CollinsGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+
+      {/* Liquid (lower than rim, perfectly aligned inside) */}
+      {/* <Rect
+        x={23}
+        y={11}
+        width={18}
+        height={42}
+        transform="scale(0.98)"
+        className="liquid"
+        opacity={0.7}
+        fill={liquidFill}
+      /> */}
+
       {/* Glass sides */}
       <Line
         x1={22}
@@ -13,6 +36,7 @@ export default function CollinsGlass({ liquidFill = null, strokeWidth = 0.5 }) {
         stroke="currentColor"
         strokeWidth={strokeWidth}
       />
+
       <Line
         x1={42}
         y1={10}
@@ -30,18 +54,6 @@ export default function CollinsGlass({ liquidFill = null, strokeWidth = 0.5 }) {
         y2={10}
         stroke="currentColor"
         strokeWidth={strokeWidth}
-      />
-
-      {/* Liquid (lower than rim, perfectly aligned inside) */}
-      <Rect
-        x={23}
-        y={11}
-        width={18}
-        height={42}
-        transform="scale(0.98)"
-        className="liquid"
-        opacity={0.7}
-        fill={liquidFill}
       />
 
       {/* Base (thicker filled foot, connects to side bottoms) */}

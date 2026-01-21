@@ -1,4 +1,5 @@
 import Svg, { Path } from "react-native-svg";
+import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
 export default function DemitasseGlass({
@@ -16,6 +17,15 @@ export default function DemitasseGlass({
         strokeLinejoin="miter"
         strokeWidth={strokeWidth}
       />
+      {/* Cup liquid (via Liquid component) */}
+      <Liquid
+        d={`M20 24 L24 45 L40 45 L44 24 Z`}
+        transform="scale(0.98)"
+        idBase="DemitasseGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Path
         d="M20 24 L24 45 L40 45 L44 24 Z"
         transform="scale(0.98)"
@@ -23,6 +33,7 @@ export default function DemitasseGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
       {/* Flat handle (simple arc) */}
       <Path
         d="M43 30 Q55 30 41 40"

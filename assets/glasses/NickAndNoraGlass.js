@@ -1,5 +1,6 @@
 import React from "react";
 import Svg, { Path, Rect, Ellipse } from "react-native-svg";
+import Liquid from "../Liquid";
 import { Garnishes } from "./Garnishes";
 import GarnishPositioner from "./GarnishPositioner";
 import { getStrokeColor } from "../../utils/theme";
@@ -16,6 +17,15 @@ export default function NickAndNoraGlass({
       {garnish && <GarnishPositioner glass="NickAndNoraGlass" name={garnish} />}
       {/* Bowl with more curved top */}
 
+      {/* Bowl liquid (via Liquid component) */}
+      <Liquid
+        d={`M24 38 L24 24 L40 24 L40 38 Q32 40 24 38 Z`}
+        transform="scale(0.98)"
+        idBase="NickAndNoraGlassGrad"
+        opacity={0.7}
+        liquidFill={liquidFill}
+      />
+      {/* Original liquid (commented out)
       <Path
         d="M24 38 L24 24 L40 24 L40 38 Q32 40 24 38 Z"
         transform="scale(0.98)"
@@ -23,6 +33,7 @@ export default function NickAndNoraGlass({
         opacity={0.7}
         fill={liquidFill}
       />
+      */}
       <Path
         d="M24 38 L24 24 L40 24 L40 38 Q32 40 24 38 Z"
         fill="none"
