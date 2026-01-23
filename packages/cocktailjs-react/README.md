@@ -19,27 +19,28 @@ Note: `react` and `react-dom` are peer dependencies; install them in your app if
 **Basic usage**
 
 ```jsx
-import React from 'react'
-import { WhiskeyShotGlass, Liquid } from 'cocktailjs-react'
+import React from "react";
+import { WhiskeyShotGlass, Liquid } from "cocktailjs-react";
 
 export default function Example() {
-	return (
-		<div>
-			<WhiskeyShotGlass size={120} liquidFill={["#b5651d", "#8b4513"]} />
-			<Liquid level={0.6} highlight highlightColor="#fff" />
-		</div>
-	)
+  return (
+    <div>
+      <WhiskeyShotGlass size={120} liquidFill={["#b5651d", "#8b4513"]} />
+      <Liquid level={0.6} highlight highlightColor="#fff" />
+    </div>
+  );
 }
 ```
 
 You can also import any glass component directly:
 
 ```jsx
-import { MartiniGlass } from 'cocktailjs-react'
-<MartiniGlass size={200} liquidFill={["#f6d365","#fda085"]} />
+import { MartiniGlass } from "cocktailjs-react";
+<MartiniGlass size={200} liquidFill={["#f6d365", "#fda085"]} />;
 ```
 
 **`Liquid` props**
+
 - `level` (number): fill level 0..1
 - `highlight` (boolean): adds highlight overlay
 - `highlightColor` (string): color for the highlight
@@ -67,6 +68,7 @@ pnpm publish --filter ./packages/cocktailjs-react
 ```
 
 **Notes**
+
 - The package exposes both ESM (`dist/index.mjs`) and CJS (`dist/index.cjs.js`) bundles.
 - Keep `react` as a peer dependency to avoid duplicate React instances in consumer apps.
 

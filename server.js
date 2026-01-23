@@ -57,17 +57,17 @@ function sendSse(res, event, data) {
   } catch (e) {}
 }
 
-app.get('/__events', (req, res) => {
+app.get("/__events", (req, res) => {
   res.set({
-    'Content-Type': 'text/event-stream',
-    'Cache-Control': 'no-cache',
-    Connection: 'keep-alive',
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    Connection: "keep-alive",
   });
   res.flushHeaders && res.flushHeaders();
   // send a ping so clients know connection succeeded
-  res.write(':ok\n\n');
+  res.write(":ok\n\n");
   sseClients.add(res);
-  req.on('close', () => {
+  req.on("close", () => {
     sseClients.delete(res);
   });
 });
@@ -81,10 +81,10 @@ function broadcast(event, data) {
 // Endpoint for local tools (watch script) to notify the server when a
 // render/manfiest update completes. This is intentionally simple and
 // not exposed in production; it's a local dev helper.
-app.post('/__notify', (req, res) => {
+app.post("/__notify", (req, res) => {
   try {
     const body = req.body || {};
-    broadcast('render', body);
+    broadcast("render", body);
     return res.json({ ok: true });
   } catch (e) {
     return res.status(500).json({ ok: false });

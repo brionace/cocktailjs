@@ -93,7 +93,7 @@ async function processEntry(srcFile, destFile) {
     } catch (e) {
       console.warn(
         "Warning: failed to mirror utils into .tmp_render:",
-        e && e.message ? e.message : e
+        e && e.message ? e.message : e,
       );
     }
 
@@ -196,7 +196,7 @@ async function run() {
   } catch (e) {
     console.warn(
       "Preparing .tmp_render failed:",
-      e && e.message ? e.message : e
+      e && e.message ? e.message : e,
     );
   }
   for (const d of dirs) {

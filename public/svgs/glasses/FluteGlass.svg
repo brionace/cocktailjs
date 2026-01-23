@@ -1,2 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="80" height="80" viewBox="0 0 64 64"><defs><linearGradient id="FluteGlassGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="100%" stop-color="#93d3d8" stop-opacity="1"></stop></linearGradient></defs><path d="M30 12 L34 12 L36 36 Q32 38 28 36 Z" transform="scale(0.98)" class="liquid" fill="url(#FluteGlassGrad)" opacity="0.7"></path><path d="M30 12 L34 12 L36 36 Q32 38 28 36 Z" fill="none" stroke="currentColor" stroke-width="0.5"></path><rect x="32" y="37" width="0.5" height="16" fill="currentColor" stroke="currentColor" stroke-width="0.5"></rect><path d="M26 53 Q32 52 38 53 L38 53 L26 53 Z" fill="currentColor" stroke="currentColor" stroke-width="0.5"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 64 64"><defs><linearGradient id="FluteGlassGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="100%" stop-color="#93d3d8" stop-opacity="1"></stop></linearGradient></defs><path d="
+          M30 12        
+          L34 12       
+          L36 36    
+          Q32 38 28 36 
+          Z
+        " transform="scale(0.98)" class="liquid" fill="url(#FluteGlassGrad)" opacity="0.7"></path><path d=" M30 12         L34 12        L36 36     Q32 38 28 36  Z " fill="none" stroke="currentColor" stroke-width="0.5"></path><rect x="32" y="37" width="0.5" height="16" fill="currentColor" stroke="currentColor" stroke-width="0.5"></rect><path d="M26 53 Q32 52 38 53 L38 53 L26 53 Z" fill="currentColor" stroke="currentColor" stroke-width="0.5"></path></svg>

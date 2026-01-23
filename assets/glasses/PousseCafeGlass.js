@@ -2,7 +2,9 @@ import React from "react";
 import Svg, { Path, Rect, G } from "react-native-svg";
 import Liquid from "../Liquid";
 import themePkg from "../../utils/theme";
-const getStrokeColor = themePkg.getStrokeColor || (themePkg.default && themePkg.default.getStrokeColor);
+const getStrokeColor =
+  themePkg.getStrokeColor ||
+  (themePkg.default && themePkg.default.getStrokeColor);
 
 export default function PousseCafeGlass({
   liquidFill = null,

@@ -56,7 +56,10 @@ export default function App() {
           </div>
           <div style={{ marginTop: 12 }}>
             <label>Highlight:</label>
-            <select value={highlight || ""} onChange={(e) => setHighlight(e.target.value || null)}>
+            <select
+              value={highlight || ""}
+              onChange={(e) => setHighlight(e.target.value || null)}
+            >
               <option value="">none</option>
               <option value="liquid">liquid</option>
               <option value="ice">ice</option>
@@ -65,15 +68,31 @@ export default function App() {
           </div>
           <div>
             <label>Highlight color:</label>
-            <input type="color" value={highlightColor} onChange={(e) => setHighlightColor(e.target.value)} />
+            <input
+              type="color"
+              value={highlightColor}
+              onChange={(e) => setHighlightColor(e.target.value)}
+            />
           </div>
           <div>
             <label>Level: {level}</label>
-            <input type="range" min="0" max="1" step="0.05" value={level} onChange={(e) => setLevel(Number(e.target.value))} />
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.05"
+              value={level}
+              onChange={(e) => setLevel(Number(e.target.value))}
+            />
           </div>
           <div>
             <label>Stop positions (comma 0..1):</label>
-            <input type="text" value={stopPositions} onChange={(e) => setStopPositions(e.target.value)} placeholder="e.g. 0,0.2,0.95" />
+            <input
+              type="text"
+              value={stopPositions}
+              onChange={(e) => setStopPositions(e.target.value)}
+              placeholder="e.g. 0,0.2,0.95"
+            />
           </div>
         </div>
 
@@ -82,10 +101,14 @@ export default function App() {
             size={size}
             strokeWidth={strokeWidth}
             liquidFill={[color1, color2, color3]}
-              highlight={highlight}
-              highlightColor={highlightColor}
-              level={level}
-              stopPositions={stopPositions ? stopPositions.split(',').map(s=>Number(s.trim())) : null}
+            highlight={highlight}
+            highlightColor={highlightColor}
+            level={level}
+            stopPositions={
+              stopPositions
+                ? stopPositions.split(",").map((s) => Number(s.trim()))
+                : null
+            }
           />
         </div>
       </div>

@@ -44,13 +44,13 @@
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
-        }
+        },
       );
       const j = await resp.json();
       alert(
         j.status === "ok"
           ? "Saved"
-          : "Error: " + (j.message || JSON.stringify(j))
+          : "Error: " + (j.message || JSON.stringify(j)),
       );
       save.disabled = false;
     };
@@ -60,7 +60,7 @@
     view.style.marginLeft = "8px";
     view.onclick = () => {
       const href = `/admin/item.html?type=${encodeURIComponent(
-        type
+        type,
       )}&name=${encodeURIComponent(name)}`;
       window.location.href = href;
     };
@@ -68,7 +68,6 @@
 
     return el;
   }
-  
 
   async function renderAll() {
     try {
@@ -79,21 +78,23 @@
       const gEl = document.getElementById("glasses");
       const gaEl = document.getElementById("garnishes");
 
-        if (gEl) {
-          gEl.innerHTML = "";
-          Object.keys(glasses)
-            .sort()
-            .forEach((k) => gEl.appendChild(makeCard(k, glasses[k], "glasses")));
-        }
+      if (gEl) {
+        gEl.innerHTML = "";
+        Object.keys(glasses)
+          .sort()
+          .forEach((k) => gEl.appendChild(makeCard(k, glasses[k], "glasses")));
+      }
 
-        if (gaEl) {
-          gaEl.innerHTML = "";
-          Object.keys(garnishes)
-            .sort()
-            .forEach((k) => gaEl.appendChild(makeCard(k, garnishes[k], "garnishes")));
-        }
+      if (gaEl) {
+        gaEl.innerHTML = "";
+        Object.keys(garnishes)
+          .sort()
+          .forEach((k) =>
+            gaEl.appendChild(makeCard(k, garnishes[k], "garnishes")),
+          );
+      }
     } catch (e) {
-      console.error('Failed to load assets', e);
+      console.error("Failed to load assets", e);
     }
   }
 
@@ -102,14 +103,14 @@
 
   // Listen for server-sent events from the admin server to auto-refresh
   // when the watch script notifies that assets were re-rendered.
-  if (typeof EventSource !== 'undefined') {
+  if (typeof EventSource !== "undefined") {
     try {
-      const es = new EventSource('/__events');
-      es.addEventListener('render', (ev) => {
-        console.log('Assets render event received', ev && ev.data);
+      const es = new EventSource("/__events");
+      es.addEventListener("render", (ev) => {
+        console.log("Assets render event received", ev && ev.data);
         renderAll();
       });
-      es.addEventListener('error', (err) => {
+      es.addEventListener("error", (err) => {
         // keep silence; browser will retry automatically
       });
     } catch (e) {

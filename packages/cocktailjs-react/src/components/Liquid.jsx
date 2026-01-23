@@ -1,6 +1,5 @@
 import React from "react";
 
-
 /**
  * Liquid renderer used by glass components.
  * Props:

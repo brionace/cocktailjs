@@ -21,6 +21,7 @@ node scripts/render-components-to-svgs.cjs
 node scripts/check-manifest-svgs.js
 
 <!-- Steps to publish to npm -->
+
 # init npm in order to publish
 
 <!-- https://docs.npmjs.com/creating-and-publishing-private-packages -->
@@ -53,28 +54,35 @@ pnpm --filter ./packages/cocktail-ui... publish --access public
 const pkg = require('@bace51/cocktail-ui');
 console.log(Object.keys(pkg.assets || {}));
 
-
 # export to packages - react
+
 pnpm run export:react
 
 # stop any running dev processes and re-run:
+
 pnpm run dev:with-playground
 
-# 
+#
+
 pnpm -w -s --silent test || true
 
 # one-shot sync
+
 node scripts/sync-assets.js
 
 # continuous watch mode (recommended during development)
+
 pnpm run sync:assets:watch
 
 # regenrate artifacts
+
 pnpm run render:svgs
 
 # Rebuild package bundles / exports:
+
 pnpm run export:react
 
 # Start live-sync watchers:
+
 pnpm run sync:assets:watch
 pnpm run dev:with-playground

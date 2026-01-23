@@ -69,27 +69,30 @@ watcher.on("change", (file) => {
         fs.writeFileSync(
           manifestPath,
           JSON.stringify(manifest, null, 2),
-          "utf8"
+          "utf8",
         );
         console.log("Updated", manifestPath);
         // Notify local admin server so connected admin UIs can refresh.
         try {
-          const http = require('http');
-          const payload = JSON.stringify({ type: 'render', file: rel });
-          const req = http.request({
-            hostname: '127.0.0.1',
-            port: process.env.PORT || 3000,
-            path: '/__notify',
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Content-Length': Buffer.byteLength(payload),
+          const http = require("http");
+          const payload = JSON.stringify({ type: "render", file: rel });
+          const req = http.request(
+            {
+              hostname: "127.0.0.1",
+              port: process.env.PORT || 3000,
+              path: "/__notify",
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Content-Length": Buffer.byteLength(payload),
+              },
             },
-          }, (res) => {
-            // drain
-            res.on('data', () => {});
-          });
-          req.on('error', () => {});
+            (res) => {
+              // drain
+              res.on("data", () => {});
+            },
+          );
+          req.on("error", () => {});
           req.write(payload);
           req.end();
         } catch (e) {
@@ -98,7 +101,7 @@ watcher.on("change", (file) => {
       } catch (e) {
         console.error("Failed to update manifest", e);
       }
-    }
+    },
   );
 });
 

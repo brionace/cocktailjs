@@ -38,7 +38,7 @@ function convertAttributes(svg) {
   if (!/xmlns=/.test(svg.slice(0, 200))) {
     svg = svg.replace(
       /<svg(\s|>)/,
-      '<svg xmlns="http://www.w3.org/2000/svg"$1'
+      '<svg xmlns="http://www.w3.org/2000/svg"$1',
     );
   }
 
@@ -107,7 +107,7 @@ async function main() {
         " -",
         r.file,
         r.status,
-        r.dest ? "-> " + r.dest : r.error || ""
+        r.dest ? "-> " + r.dest : r.error || "",
       );
     }
   }
