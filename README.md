@@ -33,8 +33,8 @@ npm version patch # or minor/major, updates package.json and creates a git tag
 
 # from repo root or package folder
 
-npm run prepare # runs node ../../scripts/export-svgs-to-package.js
-npm run build # builds dist/index.\* via esbuild
+pnpm run prepare # runs node ../../scripts/export-svgs-to-package.js
+pnpm run build # builds dist/index.\* via esbuild
 
 # create a tarball to inspect what will be published
 
@@ -43,7 +43,7 @@ tar -tzf <generated-tarball>.tgz
 
 # from packages/cocktail-ui
 
-npm publish --access public
+pnpm publish --access public
 
 # Or
 
