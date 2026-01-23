@@ -29,7 +29,7 @@ node scripts/check-manifest-svgs.js
 npm init --scope=@bace51
 
 cd packages/cocktail-ui
-npm version patch # or minor/major, updates package.json and creates a git tag
+pnpm version patch # or minor/major, updates package.json and creates a git tag
 
 # from repo root or package folder
 
@@ -38,7 +38,7 @@ pnpm run build # builds dist/index.\* via esbuild
 
 # create a tarball to inspect what will be published
 
-npm pack
+pnpm pack
 tar -tzf <generated-tarball>.tgz
 
 # from packages/cocktail-ui

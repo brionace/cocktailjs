@@ -1,6 +1,6 @@
 {
   "name": "@bace51/cocktailjs-react",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": false,
   "description": "Lightweight React components for rendering cocktail glasses and liquids as SVG.",
   "keywords": [
