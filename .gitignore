@@ -35,3 +35,9 @@ logs/
 
 # Temporary files
 .tmp_render/
+
+# npm package files
+packages/cocktail-ui/.npmignore
+packages/cocktailjs-react/.npmignore
+packages/cocktail-ui/.npmrc
+packages/cocktailjs-react/.npmrc

@@ -26,7 +26,7 @@ node scripts/check-manifest-svgs.js
 
 <!-- https://docs.npmjs.com/creating-and-publishing-private-packages -->
 
-npm init --scope=@my-org
+npm init --scope=@bace51
 
 cd packages/cocktail-ui
 npm version patch # or minor/major, updates package.json and creates a git tag
