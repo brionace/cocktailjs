@@ -41,7 +41,15 @@ export default function WhiskeyShotGlass({
       />
       */}
       {/* Heavy base to suggest weight */}
-      <Rect x={21.75} y={48} width={20.5} height={6} fill="currentColor" />
+      <Rect
+        x={22}
+        y={48}
+        width={20}
+        height={3}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={strokeWidth}
+      />
     </Svg>
   );
 }

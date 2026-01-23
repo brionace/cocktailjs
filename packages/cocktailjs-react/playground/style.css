@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+}
+input[type="range"] {
+  width: 200px;
+}
+label {
+  display: block;
+  margin-top: 8px;
+}

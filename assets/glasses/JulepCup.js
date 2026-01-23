@@ -1,7 +1,7 @@
 import Svg, { Path, Rect } from "react-native-svg";
 
 export default function JulepCup({
-  fill = "#B87333",
+  fill = "#a1a1a1",
   size = 80,
   strokeWidth = 0.5,
 }) {

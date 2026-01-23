@@ -45,6 +45,119 @@ function loadManifest() {
 app.use(express.json());
 app.use(express.static(publicDir));
 
+// Simple Server-Sent Events (SSE) endpoint to notify admin UI of
+// asset render / manifest updates. Clients connect to `/__events` and
+// receive `render` events when the watch script posts to `/__notify`.
+const sseClients = new Set();
+
+function sendSse(res, event, data) {
+  try {
+    res.write(`event: ${event}\n`);
+    res.write(`data: ${JSON.stringify(data)}\n\n`);
+  } catch (e) {}
+}
+
+app.get('/__events', (req, res) => {
+  res.set({
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    Connection: 'keep-alive',
+  });
+  res.flushHeaders && res.flushHeaders();
+  // send a ping so clients know connection succeeded
+  res.write(':ok\n\n');
+  sseClients.add(res);
+  req.on('close', () => {
+    sseClients.delete(res);
+  });
+});
+
+function broadcast(event, data) {
+  for (const client of Array.from(sseClients)) {
+    sendSse(client, event, data);
+  }
+}
+
+// Endpoint for local tools (watch script) to notify the server when a
+// render/manfiest update completes. This is intentionally simple and
+// not exposed in production; it's a local dev helper.
+app.post('/__notify', (req, res) => {
+  try {
+    const body = req.body || {};
+    broadcast('render', body);
+    return res.json({ ok: true });
+  } catch (e) {
+    return res.status(500).json({ ok: false });
+  }
+});
+
+// Proxy the playground dev server (Vite) using http-proxy-middleware.
+const { createProxyMiddleware } = require("http-proxy-middleware");
+
+// Build playground target URL from env vars. Accept either:
+// - PLAYGROUND_HOST as a full URL (http://host:port) or host without protocol (127.0.0.1)
+// - PLAYGROUND_PORT to specify port (default 5173)
+let rawHost = process.env.PLAYGROUND_HOST;
+const playgroundPort = process.env.PLAYGROUND_PORT || "5173";
+if (rawHost && typeof rawHost === "string") {
+  rawHost = rawHost.trim().replace(/\s+/g, "");
+  // strip accidental trailing colon (e.g. '127.0.0.1:') which would cause default port 80
+  if (rawHost.endsWith(":")) rawHost = rawHost.slice(0, -1);
+}
+let PLAYGROUND_TARGET;
+if (rawHost) {
+  if (/^https?:\/\//i.test(rawHost)) {
+    PLAYGROUND_TARGET = rawHost;
+  } else {
+    // rawHost like '127.0.0.1' or '127.0.0.1:5173'
+    PLAYGROUND_TARGET = rawHost.includes(":")
+      ? `http://${rawHost}`
+      : `http://${rawHost}:${playgroundPort}`;
+  }
+} else {
+  PLAYGROUND_TARGET = `http://127.0.0.1:${playgroundPort}`;
+}
+
+console.log("Playground proxy target ->", PLAYGROUND_TARGET);
+
+app.use(
+  "/playground",
+  createProxyMiddleware({
+    target: PLAYGROUND_TARGET,
+    changeOrigin: true,
+    ws: true,
+    pathRewrite: (path) => path.replace(/^\/playground/, ""),
+    logLevel: "warn",
+    onProxyReq: (proxyReq, req, res) => {
+      console.log("[playground proxy] req ->", req.method, req.originalUrl);
+    },
+    onProxyRes: (proxyRes, req, res) => {
+      // remove headers that might prevent embedding in an iframe
+      if (proxyRes && proxyRes.headers) {
+        delete proxyRes.headers["x-frame-options"];
+        delete proxyRes.headers["X-Frame-Options"];
+        delete proxyRes.headers["content-security-policy"];
+        delete proxyRes.headers["Content-Security-Policy"];
+      }
+      console.log(
+        "[playground proxy] res <-",
+        req.originalUrl,
+        proxyRes && proxyRes.statusCode,
+      );
+    },
+    onError: (err, req, res) => {
+      console.warn(
+        "Playground proxy error",
+        err && err.message ? err.message : err,
+      );
+      if (!res.headersSent) res.statusCode = 502;
+      try {
+        res.end("Playground proxy error");
+      } catch (e) {}
+    },
+  }),
+);
+
 app.get("/api/assets", (req, res) => {
   try {
     const includeSvg =
@@ -61,7 +174,7 @@ app.get("/api/assets", (req, res) => {
             if (entry && entry.svgPath) {
               const svgFile = path.join(
                 publicDir,
-                entry.svgPath.replace(/^\//, "")
+                entry.svgPath.replace(/^\//, ""),
               );
               if (fs.existsSync(svgFile))
                 entry.svg = fs.readFileSync(svgFile, "utf8");
@@ -143,7 +256,7 @@ app.post("/api/render", (req, res) => {
   const renderer = path.join(
     __dirname,
     "scripts",
-    "render-components-to-svgs.cjs"
+    "render-components-to-svgs.cjs",
   );
   if (!fs.existsSync(renderer))
     return res.status(500).json({ error: "Renderer not found" });

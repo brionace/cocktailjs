@@ -6,7 +6,7 @@ try {
   const svgsRoot = path.join(process.cwd(), "public", "svgs");
   const manifest = {};
 
-  for (const type of ["glasses", "garnishes"]) {
+  for (const type of ["glasses"]) {
     const srcDir = path.join(assetsRoot, type);
     if (!fs.existsSync(srcDir)) continue;
     manifest[type] = manifest[type] || {};

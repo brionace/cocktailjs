@@ -20,6 +20,14 @@ export default function Liquid({
   gradientAttr = null,
   opacity = 0.7,
   idBase = "liquidGrad",
+  // highlight mode: 'liquid' | 'ice' | 'all' | falsy
+  highlight = null,
+  // highlight color for the top stop when highlight targets the liquid
+  highlightColor = "#fff7c0",
+  // level: 0..1 vertical span of the gradient (1 = full height)
+  level = 1,
+  // optional explicit stop positions (array of 0..1) matching gradStops length
+  stopPositions = null,
 }) {
   let useExternal = false;
   let stops = null;
@@ -45,11 +53,30 @@ export default function Liquid({
     }
   }
 
-  const highlight = "#fff7c0";
-  const gradStops = [highlight, ...stops];
-  const offsets = gradStops.map((_, i) =>
-    Math.round((i / Math.max(1, gradStops.length - 1)) * 100)
-  );
+  const shouldHighlightLiquid = highlight === "liquid" || highlight === "all";
+  const gradStops = shouldHighlightLiquid
+    ? [highlightColor, ...stops]
+    : [...stops];
+
+  let offsets;
+  if (
+    Array.isArray(stopPositions) &&
+    stopPositions.length === gradStops.length
+  ) {
+    offsets = stopPositions.map((s) => {
+      const n = Number(s) || 0;
+      return Math.round(Math.max(0, Math.min(1, n)) * 100);
+    });
+  } else {
+    const levelVal = Math.max(0, Math.min(1, Number(level) || 0));
+    const base = 1 - levelVal;
+    if (gradStops.length === 1) offsets = [100];
+    else
+      offsets = gradStops.map((_, i) => {
+        const frac = i / Math.max(1, gradStops.length - 1);
+        return Math.round((base + frac * levelVal) * 100);
+      });
+  }
 
   const localId = idBase;
 
@@ -59,7 +86,12 @@ export default function Liquid({
         <Defs>
           <LinearGradient id={localId} x1="0" y1="0" x2="0" y2="1">
             {gradStops.map((c, i) => (
-              <Stop key={i} offset={`${offsets[i]}%`} stopColor={c} stopOpacity={1} />
+              <Stop
+                key={i}
+                offset={`${offsets[i]}%`}
+                stopColor={c}
+                stopOpacity={1}
+              />
             ))}
           </LinearGradient>
         </Defs>
@@ -74,8 +106,8 @@ export default function Liquid({
           liquidStyle
             ? undefined
             : useExternal
-            ? `url(${gradientAttr})`
-            : `url(#${localId})`
+              ? `url(${gradientAttr})`
+              : `url(#${localId})`
         }
         opacity={opacity}
       />

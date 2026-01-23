@@ -1,4 +1,4 @@
-(async function () {
+(function () {
   async function fetchAssets(includeSvg = false) {
     const res = await fetch(`/api/assets?includeSvg=${includeSvg ? 1 : 0}`);
     return res.json();
@@ -68,18 +68,52 @@
 
     return el;
   }
+  
 
-  const data = await fetchAssets(true);
-  const glasses = data.data.glasses || {};
-  const garnishes = data.data.garnishes || {};
+  async function renderAll() {
+    try {
+      const data = await fetchAssets(true);
+      const glasses = (data && data.data && data.data.glasses) || {};
+      const garnishes = (data && data.data && data.data.garnishes) || {};
 
-  const gEl = document.getElementById("glasses");
-  const gaEl = document.getElementById("garnishes");
+      const gEl = document.getElementById("glasses");
+      const gaEl = document.getElementById("garnishes");
 
-  Object.keys(glasses)
-    .sort()
-    .forEach((k) => gEl.appendChild(makeCard(k, glasses[k], "glasses")));
-  Object.keys(garnishes)
-    .sort()
-    .forEach((k) => gaEl.appendChild(makeCard(k, garnishes[k], "garnishes")));
+        if (gEl) {
+          gEl.innerHTML = "";
+          Object.keys(glasses)
+            .sort()
+            .forEach((k) => gEl.appendChild(makeCard(k, glasses[k], "glasses")));
+        }
+
+        if (gaEl) {
+          gaEl.innerHTML = "";
+          Object.keys(garnishes)
+            .sort()
+            .forEach((k) => gaEl.appendChild(makeCard(k, garnishes[k], "garnishes")));
+        }
+    } catch (e) {
+      console.error('Failed to load assets', e);
+    }
+  }
+
+  // Initial render
+  renderAll();
+
+  // Listen for server-sent events from the admin server to auto-refresh
+  // when the watch script notifies that assets were re-rendered.
+  if (typeof EventSource !== 'undefined') {
+    try {
+      const es = new EventSource('/__events');
+      es.addEventListener('render', (ev) => {
+        console.log('Assets render event received', ev && ev.data);
+        renderAll();
+      });
+      es.addEventListener('error', (err) => {
+        // keep silence; browser will retry automatically
+      });
+    } catch (e) {
+      // ignore if SSE unsupported
+    }
+  }
 })();

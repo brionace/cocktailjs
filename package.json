@@ -19,7 +19,13 @@
     "build": "pnpm run build:ui && pnpm run build:root",
     "dev:ui": "pnpm --filter ./packages/cocktail-ui... run dev || echo \"no dev script for cocktail-ui\"",
     "dev": "sh -c \"node server.js & node -r @babel/register scripts/watch-and-render.js\"",
+    "dev:with-playground": "sh -c \"node server.js & node -r @babel/register scripts/watch-and-render.js & pnpm --filter ./packages/cocktailjs-react... run dev\"",
     "render:svgs": "node scripts/render-components-to-svgs.cjs",
+    "sync:liquid": "node scripts/sync-liquid.js",
+    "sync:liquid:watch": "node scripts/sync-liquid.js --watch",
+    "sync:assets": "node scripts/sync-assets.js",
+    "sync:assets:watch": "node scripts/sync-assets.js --watch",
+    "export:react": "node scripts/export-to-cocktailjs-react.js",
     "check:svgs": "node scripts/check-manifest-svgs.js",
     "start": "node server.js"
   },
@@ -32,6 +38,9 @@
     "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.22.5",
     "chokidar": "^3.5.3",
-    "fs-extra": "^11.1.1"
+    "fs-extra": "^11.1.1",
+    "http-proxy-middleware": "^2.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

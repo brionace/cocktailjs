@@ -1,6 +1,6 @@
 import Svg, { Path, Rect, Ellipse, G } from "react-native-svg";
 import Liquid from "../Liquid";
-import { getStrokeColor } from "../../utils/theme";
+import { getStrokeColor } from "../../packages/cocktailjs-react/src/utils/theme.js";
 
 export default function ToddyGlass({
   liquidFill = null,

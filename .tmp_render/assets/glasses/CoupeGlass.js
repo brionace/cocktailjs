@@ -6,10 +6,11 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = CoupeGlass;
 var _reactNativeSvg = _interopRequireWildcard(require("react-native-svg"));
 var _Liquid = _interopRequireDefault(require("../Liquid"));
-var _theme = require("../../utils/theme");
+var _theme = _interopRequireDefault(require("../../utils/theme"));
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function (e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (const t in e) "default" !== t && {}.hasOwnProperty.call(e, t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, t)) && (i.get || i.set) ? o(f, t, i) : f[t] = e[t]); return f; })(e, t); }
+const getStrokeColor = _theme.default.getStrokeColor || _theme.default.default && _theme.default.default.getStrokeColor;
 function CoupeGlass({
   liquidFill = null,
   size = 80,

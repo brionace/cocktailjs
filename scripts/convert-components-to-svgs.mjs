@@ -5,10 +5,6 @@ import path from "path";
 const repoRoot = process.cwd();
 const assetsDirs = [
   {
-    src: path.join(repoRoot, "assets", "garnishes"),
-    dest: path.join(repoRoot, "public", "svgs", "garnishes"),
-  },
-  {
     src: path.join(repoRoot, "assets", "glasses"),
     dest: path.join(repoRoot, "public", "svgs", "glasses"),
   },

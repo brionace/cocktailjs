@@ -41,10 +41,6 @@ try {
 }
 const dirs = [
   {
-    src: path.join(repoRoot, "assets", "garnishes"),
-    dest: path.join(repoRoot, "public", "svgs", "garnishes"),
-  },
-  {
     src: path.join(repoRoot, "assets", "glasses"),
     dest: path.join(repoRoot, "public", "svgs", "glasses"),
   },

@@ -1,6 +1,7 @@
 import Svg, { Path, Rect, Line } from "react-native-svg";
 import Liquid from "../Liquid";
-import { getStrokeColor } from "../../utils/theme";
+import themePkg from "../../utils/theme";
+const getStrokeColor = themePkg.getStrokeColor || (themePkg.default && themePkg.default.getStrokeColor);
 
 export default function SourGlass({
   liquidFill = null,

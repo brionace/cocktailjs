@@ -1,5 +1,4 @@
-// Theme shim used by SSR renderer and components. Provides a minimal
-// design-system-shaped `theme.colors` object expected by many assets.
+// CommonJS theme shim for SSR/build scripts
 const theme = {
   colors: {
     accent: { 200: "#ffd180", 500: "#e67e22" },
@@ -21,5 +20,4 @@ try {
 module.exports = {
   theme,
   getStrokeColor,
-  default: { theme, getStrokeColor },
 };

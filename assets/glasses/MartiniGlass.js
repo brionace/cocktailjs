@@ -1,9 +1,6 @@
 import React from "react";
 import Svg, { Path } from "react-native-svg";
 import Liquid from "../Liquid";
-import { Garnishes } from "./Garnishes";
-import GarnishPositioner from "./GarnishPositioner";
-import { getStrokeColor } from "../../utils/theme";
 
 export default function MartiniGlass({
   liquidFill = null,
@@ -13,9 +10,6 @@ export default function MartiniGlass({
 }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64">
-      {/* Garnish (positioned) */}
-      {garnish && <GarnishPositioner glass="MartiniGlass" name={garnish} />}
-
       {/* Cocktail liquid (filled via Liquid component) */}
       <Liquid
         d={`M10 10 L54 10 L32 40 Z`}

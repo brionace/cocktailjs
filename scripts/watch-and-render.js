@@ -7,7 +7,7 @@ const chokidar = require("chokidar");
 const path = require("path");
 const { execFile } = require("child_process");
 
-const watchDirs = ["assets/glasses", "assets/garnishes"];
+const watchDirs = ["assets/glasses"];
 const watcher = chokidar.watch(watchDirs, {
   ignored: /(^|[\\\/])\../,
   ignoreInitial: true,
@@ -43,7 +43,7 @@ watcher.on("change", (file) => {
         const svgsRoot = path.join(process.cwd(), "public", "svgs");
         const manifest = {};
 
-        for (const type of ["glasses", "garnishes"]) {
+        for (const type of ["glasses"]) {
           const srcDir = path.join(assetsRoot, type);
           if (!fs.existsSync(srcDir)) continue;
           manifest[type] = manifest[type] || {};
@@ -72,6 +72,29 @@ watcher.on("change", (file) => {
           "utf8"
         );
         console.log("Updated", manifestPath);
+        // Notify local admin server so connected admin UIs can refresh.
+        try {
+          const http = require('http');
+          const payload = JSON.stringify({ type: 'render', file: rel });
+          const req = http.request({
+            hostname: '127.0.0.1',
+            port: process.env.PORT || 3000,
+            path: '/__notify',
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Content-Length': Buffer.byteLength(payload),
+            },
+          }, (res) => {
+            // drain
+            res.on('data', () => {});
+          });
+          req.on('error', () => {});
+          req.write(payload);
+          req.end();
+        } catch (e) {
+          // ignore notify failures in dev tooling
+        }
       } catch (e) {
         console.error("Failed to update manifest", e);
       }

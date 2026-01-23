@@ -1,6 +1,6 @@
 # cocktailjs export
 
-This folder is an export of the assets and build tooling for glasses and garnishes.
+This folder is an export of the assets and build tooling for glasses.
 
 Next steps:
 
@@ -21,6 +21,11 @@ node scripts/render-components-to-svgs.cjs
 node scripts/check-manifest-svgs.js
 
 <!-- Steps to publish to npm -->
+# init npm in order to publish
+
+<!-- https://docs.npmjs.com/creating-and-publishing-private-packages -->
+
+npm init --scope=@my-org
 
 cd packages/cocktail-ui
 npm version patch # or minor/major, updates package.json and creates a git tag
@@ -46,10 +51,30 @@ pnpm --filter ./packages/cocktail-ui... publish --access public
 # very package on npm
 
 const pkg = require('@bace51/cocktail-ui');
-console.log(Object.keys(pkg.assets || {})); // or pkg.get('garnishes/Basil')
+console.log(Object.keys(pkg.assets || {}));
 
-# init npm in order to publish
 
-<!-- https://docs.npmjs.com/creating-and-publishing-private-packages -->
+# export to packages - react
+pnpm run export:react
 
-npm init --scope=@my-org
+# stop any running dev processes and re-run:
+pnpm run dev:with-playground
+
+# 
+pnpm -w -s --silent test || true
+
+# one-shot sync
+node scripts/sync-assets.js
+
+# continuous watch mode (recommended during development)
+pnpm run sync:assets:watch
+
+# regenrate artifacts
+pnpm run render:svgs
+
+# Rebuild package bundles / exports:
+pnpm run export:react
+
+# Start live-sync watchers:
+pnpm run sync:assets:watch
+pnpm run dev:with-playground

@@ -28,7 +28,15 @@ export default function SingleShotGlass({
       />
 
       {/* Thick base to suggest weight */}
-      <Rect x={24.75} y={48} width={14.5} height={6} fill="currentColor" />
+      <Rect
+        x={25}
+        y={48}
+        width={14}
+        height={3}
+        stroke="currentColor"
+        strokeWidth={strokeWidth}
+        fill="none"
+      />
     </Svg>
   );
 }

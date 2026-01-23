@@ -28,7 +28,15 @@ export default function DoubleShotGlass({
       />
 
       {/* Thick base */}
-      <Rect x={22.25} y={58} width={19.5} height={6} fill="currentColor" />
+      <Rect
+        x={22.5}
+        y={58}
+        width={19}
+        height={3}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={strokeWidth}
+      />
     </Svg>
   );
 }

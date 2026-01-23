@@ -1,6 +1,6 @@
 import Svg, { Path, Rect, Line } from "react-native-svg";
 import Liquid from "../Liquid";
-import { getStrokeColor } from "../../utils/theme";
+import { getStrokeColor } from "../../packages/cocktailjs-react/src/utils/theme.js";
 
 export default function GobletGlass({
   liquidFill = null,

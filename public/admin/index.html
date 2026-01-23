@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <style>
       body {
-        font-family: system-ui, -apple-system, Arial, sans-serif;
+        font-family:
+          system-ui,
+          -apple-system,
+          Arial,
+          sans-serif;
         padding: 16px;
       }
       .grid {
@@ -47,16 +51,68 @@
   <body>
     <h1>Assets Admin</h1>
     <p>
-      List and edit glasses and garnishes. Changes persist to the assets
+      List and edit glasses. Changes persist to the assets
       manifest and SVG files.
     </p>
 
     <h2>Glasses</h2>
     <div id="glasses" class="grid"></div>
 
-    <h2>Garnishes</h2>
-    <div id="garnishes" class="grid"></div>
+    <h2>Playground</h2>
+    <p>Interactive component playground (embedded):</p>
+    <div style="border: 1px solid #ddd; height: 480px">
+      <iframe
+        src="/playground/"
+        style="border: 0; width: 100%; height: 100%"
+        title="cocktailjs-react playground"
+      ></iframe>
+    </div>
+    <p>
+      If you prefer a separate window,
+      <a href="http://localhost:5173" target="_blank" rel="noopener"
+        >open the playground</a
+      >.
+    </p>
 
+    <script>
+      // Try the proxied playground first, fall back to direct Vite URL if proxy fails.
+      (function () {
+        const iframe = document.querySelector('iframe[src="/playground/"]');
+        if (!iframe) return;
+        const proxied = "/playground/";
+        const direct = "http://localhost:5173/";
+
+        const timeout = (ms) => new Promise((res) => setTimeout(res, ms));
+
+        // Probe the proxied URL with fetch; if it fails or responds >=400, switch to direct.
+        Promise.race([
+          fetch(proxied, { method: "GET" })
+            .then((r) => ({ ok: r.ok, status: r.status }))
+            .catch(() => ({ ok: false })),
+          timeout(1800).then(() => ({ ok: false, timedOut: true })),
+        ]).then((result) => {
+          if (result && result.ok) {
+            console.log("Playground proxy reachable; using", proxied);
+            iframe.src = proxied;
+          } else {
+            console.warn(
+              "Playground proxy not reachable, falling back to direct Vite URL",
+            );
+            iframe.src = direct;
+            const note = document.createElement("div");
+            note.style.marginTop = "8px";
+            note.style.color = "#b00";
+            note.textContent =
+              "Playground proxy unavailable — using direct dev server at " +
+              direct;
+            iframe.parentNode.parentNode.insertBefore(
+              note,
+              iframe.parentNode.nextSibling,
+            );
+          }
+        });
+      })();
+    </script>
     <script src="/admin/admin.js"></script>
   </body>
 </html>

@@ -1,8 +1,6 @@
 import React from "react";
 import Svg, { Path, Rect } from "react-native-svg";
 import Liquid from "../Liquid";
-import GarnishPositioner from "./GarnishPositioner";
-import { getStrokeColor } from "../../utils/theme";
 
 export default function PintGlass({
   liquidFill = null,
@@ -12,10 +10,6 @@ export default function PintGlass({
 }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64">
-      {garnish && <GarnishPositioner glass="PintGlass" name={garnish} />}
-
-      {/* Outer pint outline */}
-
       {/* Liquid inside (via Liquid component) */}
       <Liquid
         d={`M18 10 L46 10 L42 54 L22 54 Z`}
