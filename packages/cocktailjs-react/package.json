@@ -29,8 +29,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "esbuild src/index.js --bundle --outfile=dist/index.mjs --format=esm --platform=browser --minify",
-    "build:cjs": "esbuild src/index.js --bundle --outfile=dist/index.cjs.js --format=cjs --platform=node",
+    "build": "esbuild src/index.js --bundle --outfile=dist/index.mjs --format=esm --platform=browser --minify --external:react --external:react-dom --external:react/jsx-runtime",
+    "build:cjs": "esbuild src/index.js --bundle --outfile=dist/index.cjs.js --format=cjs --platform=node --external:react --external:react-dom --external:react/jsx-runtime",
     "prepare": "pnpm run build && pnpm run build:cjs && cp index.d.ts dist/index.d.ts || true",
     "dev": "vite --config playground/vite.config.js",
     "dev:dist": "USE_DIST=1 vite --config playground/vite.config.js"
@@ -43,7 +43,7 @@
     "@vitejs/plugin-react": "^4.0.0"
   },
   "peerDependencies": {
-    "react": "^16.8 || ^17 || ^18"
+    "react": "^16.8 || ^17 || ^18 || ^19"
   },
   "publishConfig": {
     "access": "public"
@@ -52,6 +52,7 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs.js"
     },
