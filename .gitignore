@@ -41,3 +41,4 @@ packages/cocktail-ui/.npmignore
 packages/cocktailjs-react/.npmignore
 packages/cocktail-ui/.npmrc
 packages/cocktailjs-react/.npmrc
+.npmrc
