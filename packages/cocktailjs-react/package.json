@@ -21,7 +21,6 @@
   },
   "license": "MIT",
   "author": "",
-  "type": "commonjs",
   "main": "dist/index.cjs.js",
   "directories": {
     "test": "test"
@@ -32,7 +31,7 @@
   "scripts": {
     "build": "esbuild src/index.js --bundle --outfile=dist/index.mjs --format=esm --platform=browser --minify",
     "build:cjs": "esbuild src/index.js --bundle --outfile=dist/index.cjs.js --format=cjs --platform=node",
-    "prepare": "pnpm run build && pnpm run build:cjs",
+    "prepare": "pnpm run build && pnpm run build:cjs && cp index.d.ts dist/index.d.ts || true",
     "dev": "vite --config playground/vite.config.js",
     "dev:dist": "USE_DIST=1 vite --config playground/vite.config.js"
   },
@@ -49,5 +48,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "module": "dist/index.mjs"
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs.js"
+    },
+    "./*": "./dist/*"
+  }
 }
