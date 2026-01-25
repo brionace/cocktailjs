@@ -7,6 +7,7 @@ export default function MartiniGlass({
   garnish = null,
   size = 80,
   strokeWidth = 1,
+  idBase = "MartiniGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -14,7 +15,7 @@ export default function MartiniGlass({
       <Liquid
         d={`M10 10 L54 10 L32 40 Z`}
         transform="scale(0.98)"
-        idBase="MartiniGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

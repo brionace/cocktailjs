@@ -7,6 +7,7 @@ export default function PousseCafeGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "PousseCafeGlassGrad",
 }) {
   const cx = 32;
   const height = Math.floor(size * 1.125);
@@ -24,7 +25,7 @@ export default function PousseCafeGlass({
             Z
           `}
           transform="scale(0.98)"
-          idBase="PousseCafeGlassGrad"
+          idBase={idBase}
           opacity={0.7}
           liquidFill={liquidFill}
         />

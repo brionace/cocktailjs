@@ -7,6 +7,7 @@ export default function GobletGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 2,
+  idBase = "GobletGlassGrad",
 }) {
   const height = Math.round((size * 90) / 80);
 
@@ -26,7 +27,7 @@ export default function GobletGlass({
       <Liquid
         d={` M19 28 L46 28 Q52 58 32 70 Q12 58 16 28 Z `}
         transform="scale(0.98)"
-        idBase="GobletGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

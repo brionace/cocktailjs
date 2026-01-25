@@ -7,6 +7,7 @@ export default function DemitasseGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "DemitasseGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -22,7 +23,7 @@ export default function DemitasseGlass({
       <Liquid
         d={`M20 24 L24 45 L40 45 L44 24 Z`}
         transform="scale(0.98)"
-        idBase="DemitasseGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

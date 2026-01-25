@@ -7,6 +7,7 @@ export default function HighballGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "HighballGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -16,7 +17,7 @@ export default function HighballGlass({
       <Liquid
         d={`M18 10 L46 10 L46 60 L18 60 Z`}
         transform="scale(0.98)"
-        idBase="HighballGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

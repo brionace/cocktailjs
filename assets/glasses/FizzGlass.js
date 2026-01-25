@@ -9,6 +9,7 @@ export default function FizzGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "FizzGlassGrad",
 }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64">
@@ -23,7 +24,7 @@ export default function FizzGlass({
           M22 10 L24 23 L40 23 L42 10 Z 
         `}
         transform="scale(0.98)"
-        idBase="FizzGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

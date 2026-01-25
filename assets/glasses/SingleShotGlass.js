@@ -7,6 +7,7 @@ export default function SingleShotGlass({
   liquidFill = ["#FFFFFF", "#E0E0E0"],
   size = 64,
   strokeWidth = 0.5,
+  idBase = "SingleShotGlassGrad",
 }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64">
@@ -22,7 +23,7 @@ export default function SingleShotGlass({
       <Liquid
         d={`M23 28 C24.5 36 24.5 40 25 48 L39 48 C39.5 40 39.5 36 41 28 Z`}
         transform="scale(0.98)"
-        idBase="SingleShotGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

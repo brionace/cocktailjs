@@ -7,6 +7,7 @@ export default function NickAndNoraGlass({
   garnish = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "NickAndNoraGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -14,7 +15,7 @@ export default function NickAndNoraGlass({
       <Liquid
         d={`M24 38 L24 24 L40 24 L40 38 Q32 40 24 38 Z`}
         transform="scale(0.98)"
-        idBase="NickAndNoraGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

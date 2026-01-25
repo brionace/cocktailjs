@@ -7,6 +7,7 @@ export default function SlingGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "SlingGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -26,7 +27,7 @@ export default function SlingGlass({
       <Liquid
         d={`M25 12 L40 12 C41 29 40 46 32 55 C24 46 24 28 24 12 Z`}
         transform="scale(0.98)"
-        idBase="SlingGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

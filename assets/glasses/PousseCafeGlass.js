@@ -27,7 +27,7 @@ export default function PousseCafeGlass({
             Z
           `}
           transform="scale(0.98)"
-          idBase="PousseCafeGlassGrad"
+          idBase={idBase}
           opacity={0.7}
           liquidFill={liquidFill}
         />

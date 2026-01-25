@@ -7,6 +7,7 @@ export default function ToddyGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.8,
+  idBase = "ToddyGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -16,7 +17,7 @@ export default function ToddyGlass({
       <Liquid
         d={`M22 12 H42 V40 H22 Z`}
         transform="scale(0.98)"
-        idBase="ToddyGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

@@ -6,6 +6,7 @@ export default function PilsnerGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "PilsnerGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -13,7 +14,7 @@ export default function PilsnerGlass({
       <Liquid
         d={`M24 10 L40 10 Q38 36 36 50 Q32 54 28 50 Q26 36 24 10 Z`}
         transform="scale(0.98)"
-        idBase="PilsnerGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

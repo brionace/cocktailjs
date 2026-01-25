@@ -6,6 +6,7 @@ export default function WhiskeyShotGlass({
   liquidFill = ["#FFFFFF", "#E0E0E0"],
   size = 80,
   strokeWidth = 0.5,
+  idBase = "ShotGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -24,7 +25,7 @@ export default function WhiskeyShotGlass({
       <Liquid
         d={`M22 30 L42 30 L42 48 L22 48 Z`}
         transform="scale(0.98)"
-        idBase="ShotGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

@@ -7,6 +7,7 @@ export default function ParfaitGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "ParfaitGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -21,7 +22,7 @@ export default function ParfaitGlass({
           Z
         `}
         transform="scale(0.98)"
-        idBase="ParfaitGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

@@ -7,6 +7,7 @@ export default function SnifterGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "SnifterGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -37,7 +38,7 @@ export default function SnifterGlass({
       <Liquid
         d={` M22 18 C16 32, 16 46, 32 52 C48 46, 48 32, 42 18 Z `}
         transform="scale(0.98)"
-        idBase="SnifterGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

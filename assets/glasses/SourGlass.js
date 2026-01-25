@@ -9,6 +9,7 @@ export default function SourGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "SourGlassGrad",
 }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64">
@@ -34,7 +35,7 @@ export default function SourGlass({
           Z
         `}
         transform="scale(0.98)"
-        idBase="SourGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

@@ -31,7 +31,7 @@ export default function IrishCoffeeGlass({
             Z
           `}
         transform="scale(0.98)"
-        idBase="IrishCoffeeGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

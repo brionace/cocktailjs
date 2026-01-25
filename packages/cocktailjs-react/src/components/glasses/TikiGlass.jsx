@@ -7,6 +7,7 @@ export default function TikiGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "TikiGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -39,7 +40,7 @@ export default function TikiGlass({
       <Liquid
         d={`M21 9 L41 9 L41 51 L21 51 Z`}
         transform="scale(0.98)"
-        idBase="TikiGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

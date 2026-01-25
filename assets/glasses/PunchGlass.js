@@ -9,6 +9,7 @@ export default function PunchGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "PunchGlassGrad",
 }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64">
@@ -24,7 +25,7 @@ export default function PunchGlass({
             Z
           `}
           transform="scale(0.98)"
-          idBase="PunchGlassGrad"
+          idBase={idBase}
           opacity={0.7}
           liquidFill={liquidFill}
         />

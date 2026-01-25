@@ -9,6 +9,7 @@ export default function CoupeGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 1,
+  idBase = "CoupeGlassGrad",
 }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64">
@@ -20,7 +21,7 @@ export default function CoupeGlass({
           M12 32 Q32 36 52 32 L52 18 Q32 18 12 18 Z 
         `}
         transform="scale(0.98)"
-        idBase="CoupeGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

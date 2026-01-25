@@ -7,6 +7,7 @@ export default function TankardGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 1,
+  idBase = "TankardGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -19,7 +20,7 @@ export default function TankardGlass({
       <Liquid
         d={`M14 10 L48 10 L48 44 L14 44 Z`}
         transform="scale(0.98)"
-        idBase="TankardGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

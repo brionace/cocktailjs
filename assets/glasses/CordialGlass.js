@@ -5,14 +5,18 @@ const getStrokeColor =
   themePkg.getStrokeColor ||
   (themePkg.default && themePkg.default.getStrokeColor);
 
-export default function CordialGlass({ liquidFill = null, strokeWidth = 0.5 }) {
+export default function CordialGlass({
+  liquidFill = null,
+  strokeWidth = 0.5,
+  idBase = "CordialGlassGrad",
+}) {
   return (
     <Svg viewBox="0 0 64 64">
       {/* Bowl / cup liquid (via Liquid component) */}
       <Liquid
         d={`M30 16 L35 16 Q34 25 31 26 Q30 26 28 16 Z`}
         transform="scale(0.98)"
-        idBase="CordialGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

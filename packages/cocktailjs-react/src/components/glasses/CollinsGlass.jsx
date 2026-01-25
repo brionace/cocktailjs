@@ -5,13 +5,14 @@ import Liquid from "../Liquid";
 export default function CollinsGlass({
   liquidFill = ["#FFF7C0", "#FFD27A"],
   strokeWidth = 0.5,
+  idBase = "CollinsGlassGrad",
 }) {
   return (
     <svg viewBox="0 0 64 64">
       <Liquid
         d={`M22 10 L42 10 L42 54 L22 54 Z`}
         transform="scale(0.98)"
-        idBase="CollinsGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

@@ -6,6 +6,7 @@ export default function AbsintheGlass({
   liquidFill = ["#A8E6CF", "#DCEDC2", "#FFD3B6"],
   size = 80,
   strokeWidth = 0.5,
+  idBase = "AbsintheGlassGrad",
 }) {
   const height = Math.floor(size * 1.125); // Maintain 80:90 aspect ratio
   return (
@@ -15,7 +16,7 @@ export default function AbsintheGlass({
         d={`M20 35 L44 35 L42 49 Q32 52 22 49 Z
            M26 50 Q32 50 38 50 L36 60 L28 60 Z`}
         transform="scale(0.98)"
-        idBase="AbsintheGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

@@ -7,6 +7,7 @@ export default function RocksGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "RocksGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -14,7 +15,7 @@ export default function RocksGlass({
       <Liquid
         d={`M14 24 L50 24 L50 58 L14 58 Z`}
         transform="scale(0.98)"
-        idBase="RocksGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

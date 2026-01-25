@@ -7,6 +7,7 @@ export default function PintGlass({
   garnish = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "PintGlassGrad",
 }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64">
@@ -14,7 +15,7 @@ export default function PintGlass({
       <Liquid
         d={`M18 10 L46 10 L42 54 L22 54 Z`}
         transform="scale(0.98)"
-        idBase="PintGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

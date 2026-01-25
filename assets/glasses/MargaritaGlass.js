@@ -7,6 +7,7 @@ export default function MargaritaGlass({
   // gradientAttr = { x1: "0", y1: "0", x2: "0", y2: "1" },
   size = 80,
   strokeWidth = 0.5,
+  idBase = "MargaritaGlassGrad",
 }) {
   const stops = liquidFill;
   return (
@@ -15,7 +16,7 @@ export default function MargaritaGlass({
       <Liquid
         d={`M14 18 L50 18 Q46 28 36 29 Q30 30 28 29 Q18 28 14 18 Z M28 29 Q32 29 36 29 Q38 34 32 36 Q26 34 28 29 Z`}
         transform="scale(0.98)"
-        idBase="MargaritaGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
         // liquidStyle={liquidStyle}

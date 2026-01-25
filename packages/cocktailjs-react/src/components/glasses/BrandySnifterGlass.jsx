@@ -5,6 +5,7 @@ import Liquid from "../Liquid";
 export default function BrandySnifterGlass({
   liquidFill = ["#F6D29A", "#D98F3A"],
   strokeWidth = 1,
+  idBase = "BrandySnifterGlassGrad",
 }) {
   return (
     <svg viewBox="0 0 64 64">
@@ -16,7 +17,7 @@ export default function BrandySnifterGlass({
           Q32 52 20 48 
           Z`}
         transform="scale(0.98)"
-        idBase="BrandySnifterGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

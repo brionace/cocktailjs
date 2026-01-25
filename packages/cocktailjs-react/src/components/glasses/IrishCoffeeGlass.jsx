@@ -7,6 +7,7 @@ export default function IrishCoffeeGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 2,
+  idBase = "IrishCoffeeGlassGrad",
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -29,7 +30,7 @@ export default function IrishCoffeeGlass({
             Z
           `}
         transform="scale(0.98)"
-        idBase="IrishCoffeeGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />

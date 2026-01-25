@@ -9,6 +9,7 @@ export default function WineGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
+  idBase = "WineGlassGrad",
 }) {
   const height = Math.round((size * 90) / 80);
   return (
@@ -17,7 +18,7 @@ export default function WineGlass({
       <Liquid
         d={`M26 26 L38 26 Q44 62 32 62 Q20 62 26 26 Z`}
         transform="scale(0.98)"
-        idBase="WineGlassGrad"
+        idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
       />
