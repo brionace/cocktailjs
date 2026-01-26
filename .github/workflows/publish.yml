@@ -26,6 +26,19 @@ jobs:
           corepack prepare pnpm@latest --activate
           pnpm --version
 
+      - name: Diagnostics: check pnpm availability
+        run: |
+          echo "--- Environment ---"
+          echo "PATH=$PATH"
+          node -v
+          corepack --version || echo "corepack not found"
+          if command -v pnpm >/dev/null 2>&1; then
+            echo "pnpm found at: $(which pnpm)"
+            pnpm --version || true
+          else
+            echo "pnpm not found"
+          fi
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
 
