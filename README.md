@@ -87,7 +87,6 @@ pnpm run export:react
 pnpm run sync:assets:watch
 pnpm run dev:with-playground
 
-
 ## CI Publishing (recommended)
 
 This repository includes a GitHub Actions workflow that will publish `packages/cocktailjs-react` when you push a tag like `v1.2.3` or trigger the workflow manually.
@@ -104,4 +103,3 @@ git push origin v1.0.2
 ```
 
 The workflow will run, build `packages/cocktailjs-react`, and publish to npm using the `NPM_TOKEN` secret. Do NOT commit tokens to the repository.
-
