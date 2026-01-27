@@ -73,3 +73,21 @@ pnpm publish --filter ./packages/cocktailjs-react
 - Keep `react` as a peer dependency to avoid duplicate React instances in consumer apps.
 
 If you need help integrating the components or want additional examples, open an issue or request an example in the repo.
+
+
+#####
+cd packages/cocktailjs-react
+
+# Option A — inline prompt (recommended so token isn't in shell history):
+read -s -p "NPM token: " NPM_TOKEN; echo
+
+# write temporary project-local .npmrc
+printf "//registry.npmjs.org/:_authToken=%s\n" "$NPM_TOKEN" > .npmrc
+
+# build and publish
+pnpm run prepare
+npm publish --access public
+
+# remove the temporary file
+rm -f .npmrc
+unset NPM_TOKEN
