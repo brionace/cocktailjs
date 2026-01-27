@@ -18,7 +18,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18"
-          cache: "pnpm"
+          # Do not enable pnpm cache here; enabling pnpm cache can cause
+          # the action to try to access `pnpm` before it's available and
+          # fail the setup step. We enable Corepack and pnpm explicitly
+          # in a following step.
 
       - name: Enable Corepack and activate pnpm
         run: |
