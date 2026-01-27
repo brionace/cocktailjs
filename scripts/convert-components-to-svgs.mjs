@@ -5,7 +5,7 @@ import path from "path";
 const repoRoot = process.cwd();
 const assetsDirs = [
   {
-    src: path.join(repoRoot, "assets", "glasses"),
+    src: path.join(repoRoot, "packages", "cocktailjs-react", "src", "components", "glasses"),
     dest: path.join(repoRoot, "public", "svgs", "glasses"),
   },
 ];

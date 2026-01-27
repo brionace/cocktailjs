@@ -41,7 +41,7 @@ try {
 }
 const dirs = [
   {
-    src: path.join(repoRoot, "assets", "glasses"),
+    src: path.join(repoRoot, "packages", "cocktailjs-react", "src", "components", "glasses"),
     dest: path.join(repoRoot, "public", "svgs", "glasses"),
   },
 ];

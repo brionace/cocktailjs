@@ -7,6 +7,8 @@ export default function WhiskeyShotGlass({
   size = 80,
   strokeWidth = 0.5,
   idBase = "ShotGlassGrad",
+  // any extra props will be forwarded to `Liquid`
+  ...liquidProps
 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64">
@@ -28,6 +30,7 @@ export default function WhiskeyShotGlass({
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
+        {...liquidProps}
       />
       {/* Original liquid (commented out)
       <rect
