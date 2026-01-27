@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 // Minimal, permissive typings for cocktailjs-react components.
 // Each component is exported as a React component accepting any props.

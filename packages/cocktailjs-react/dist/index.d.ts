@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 // Minimal, permissive typings for cocktailjs-react components (bundled into dist).
 type AnyComponent = React.ComponentType<any>;
@@ -76,4 +76,3 @@ declare const _default: {
 };
 
 export default _default;
-
