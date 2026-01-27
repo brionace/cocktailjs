@@ -1,6 +1,8 @@
 import * as React from 'react';
 
-// Minimal, permissive typings for cocktailjs-react components (bundled into dist).
+// Minimal, permissive typings for cocktailjs-react components.
+// Each component is exported as a React component accepting any props.
+
 type AnyComponent = React.ComponentType<any>;
 
 export const Liquid: AnyComponent;
@@ -76,4 +78,3 @@ declare const _default: {
 };
 
 export default _default;
-
