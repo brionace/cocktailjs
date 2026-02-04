@@ -39,6 +39,7 @@ export const TikiGlass: AnyComponent;
 export const ToddyGlass: AnyComponent;
 export const WhiskeyShotGlass: AnyComponent;
 export const WineGlass: AnyComponent;
+export const glasses: { [key: string]: string };
 
 declare const _default: {
   Liquid: AnyComponent;
@@ -75,6 +76,7 @@ declare const _default: {
   ToddyGlass: AnyComponent;
   WhiskeyShotGlass: AnyComponent;
   WineGlass: AnyComponent;
+  glasses: { [key: string]: string };
 };
 
 export default _default;
