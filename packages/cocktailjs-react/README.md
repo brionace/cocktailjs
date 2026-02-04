@@ -29,7 +29,7 @@ export default function Example() {
 }
 ```
 
-## Common props
+## Props
 
 - `size` (number): width/height in pixels for glass components.
 - `liquidFill` (string | string[]): color or gradient colors used for the liquid.

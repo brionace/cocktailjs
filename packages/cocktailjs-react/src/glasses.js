@@ -1,37 +1,100 @@
 const glasses = [
-  { name: 'AbsintheGlass', about: 'Tall narrow glass traditionally used for absinthe' },
-  { name: 'BrandySnifterGlass', about: 'Short, wide bowl for brandy and aromatics' },
-  { name: 'CollinsGlass', about: 'Tall, slim highball-style glass for long drinks' },
-  { name: 'CopperMug', about: 'Insulated mug commonly used for Moscow Mules' },
-  { name: 'CordialGlass', about: 'Small stemmed glass for cordials and liqueurs' },
-  { name: 'CoupeGlass', about: 'Shallow, broad-bowled stemmed glass for cocktails' },
-  { name: 'DemitasseGlass', about: 'Tiny cup used for espresso or small servings' },
-  { name: 'DoubleShotGlass', about: 'Small glass sized for a double shot or liqueur' },
-  { name: 'FizzGlass', about: 'Tall glass for fizzy, highball-like cocktails' },
-  { name: 'FluteGlass', about: 'Narrow stemmed glass for sparkling cocktails or champagne' },
-  { name: 'GobletGlass', about: 'Large bowl stemmed glass for water or wine-style serves' },
-  { name: 'HighballGlass', about: 'Tall glass for mixed drinks over ice' },
-  { name: 'HurricaneGlass', about: 'Curved glass used for tropical, rum-forward drinks' },
-  { name: 'IrishCoffeeGlass', about: 'Handled glass for hot cocktails like Irish Coffee' },
-  { name: 'JulepCup', about: 'Silver or metal cup for mint juleps served over crushed ice' },
-  { name: 'MargaritaGlass', about: 'Broad-rimmed glass typically used for margaritas' },
-  { name: 'MartiniGlass', about: 'Classic conical stemmed glass for martinis and cocktails' },
-  { name: 'NickAndNoraGlass', about: 'Small stemmed cocktail glass named for film characters' },
-  { name: 'ParfaitGlass', about: 'Tall, elegant glass for layered desserts or cocktails' },
-  { name: 'PilsnerGlass', about: 'Tall tapered glass for pilsner-style beers' },
-  { name: 'PintGlass', about: 'Standard pint glass for beer servings' },
-  { name: 'PousseCafeGlass', about: 'Very tall, narrow glass for layered pousse-cafés' },
-  { name: 'PunchGlass', about: 'Large bowl or glass used for punch servings' },
-  { name: 'RocksGlass', about: 'Short, wide glass for spirits served over ice' },
-  { name: 'SingleShotGlass', about: 'Small single-shot glass for neat pours' },
-  { name: 'SlingGlass', about: 'Stemmed glass used historically for sling cocktails' },
-  { name: 'SnifterGlass', about: 'Rounded glass for nosing spirits like brandy or cognac' },
-  { name: 'SourGlass', about: 'Stemmed glass for sours and shaken cocktails' },
-  { name: 'TankardGlass', about: 'Large handled mug, often used for beer' },
-  { name: 'TikiGlass', about: 'Themed ceramic or glass mug for tiki-style cocktails' },
-  { name: 'ToddyGlass', about: 'Handled mug for hot toddies and warm drinks' },
-  { name: 'WhiskeyShotGlass', about: 'Small glass for whiskey shots' },
-  { name: 'WineGlass', about: 'Standard stemmed glass for wine service' },
+  {
+    name: "AbsintheGlass",
+    about: "Tall narrow glass traditionally used for absinthe",
+  },
+  {
+    name: "BrandySnifterGlass",
+    about: "Short, wide bowl for brandy and aromatics",
+  },
+  {
+    name: "CollinsGlass",
+    about: "Tall, slim highball-style glass for long drinks",
+  },
+  { name: "CopperMug", about: "Insulated mug commonly used for Moscow Mules" },
+  {
+    name: "CordialGlass",
+    about: "Small stemmed glass for cordials and liqueurs",
+  },
+  {
+    name: "CoupeGlass",
+    about: "Shallow, broad-bowled stemmed glass for cocktails",
+  },
+  {
+    name: "DemitasseGlass",
+    about: "Tiny cup used for espresso or small servings",
+  },
+  {
+    name: "DoubleShotGlass",
+    about: "Small glass sized for a double shot or liqueur",
+  },
+  { name: "FizzGlass", about: "Tall glass for fizzy, highball-like cocktails" },
+  {
+    name: "FluteGlass",
+    about: "Narrow stemmed glass for sparkling cocktails or champagne",
+  },
+  {
+    name: "GobletGlass",
+    about: "Large bowl stemmed glass for water or wine-style serves",
+  },
+  { name: "HighballGlass", about: "Tall glass for mixed drinks over ice" },
+  {
+    name: "HurricaneGlass",
+    about: "Curved glass used for tropical, rum-forward drinks",
+  },
+  {
+    name: "IrishCoffeeGlass",
+    about: "Handled glass for hot cocktails like Irish Coffee",
+  },
+  {
+    name: "JulepCup",
+    about: "Silver or metal cup for mint juleps served over crushed ice",
+  },
+  {
+    name: "MargaritaGlass",
+    about: "Broad-rimmed glass typically used for margaritas",
+  },
+  {
+    name: "MartiniGlass",
+    about: "Classic conical stemmed glass for martinis and cocktails",
+  },
+  {
+    name: "NickAndNoraGlass",
+    about: "Small stemmed cocktail glass named for film characters",
+  },
+  {
+    name: "ParfaitGlass",
+    about: "Tall, elegant glass for layered desserts or cocktails",
+  },
+  { name: "PilsnerGlass", about: "Tall tapered glass for pilsner-style beers" },
+  { name: "PintGlass", about: "Standard pint glass for beer servings" },
+  {
+    name: "PousseCafeGlass",
+    about: "Very tall, narrow glass for layered pousse-cafés",
+  },
+  { name: "PunchGlass", about: "Large bowl or glass used for punch servings" },
+  {
+    name: "RocksGlass",
+    about: "Short, wide glass for spirits served over ice",
+  },
+  { name: "SingleShotGlass", about: "Small single-shot glass for neat pours" },
+  {
+    name: "SlingGlass",
+    about: "Stemmed glass used historically for sling cocktails",
+  },
+  {
+    name: "SnifterGlass",
+    about: "Rounded glass for nosing spirits like brandy or cognac",
+  },
+  { name: "SourGlass", about: "Stemmed glass for sours and shaken cocktails" },
+  { name: "TankardGlass", about: "Large handled mug, often used for beer" },
+  {
+    name: "TikiGlass",
+    about: "Themed ceramic or glass mug for tiki-style cocktails",
+  },
+  { name: "ToddyGlass", about: "Handled mug for hot toddies and warm drinks" },
+  { name: "WhiskeyShotGlass", about: "Small glass for whiskey shots" },
+  { name: "WineGlass", about: "Standard stemmed glass for wine service" },
 ];
 
 export default glasses;

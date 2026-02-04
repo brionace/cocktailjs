@@ -32,7 +32,7 @@ import TikiGlass from "./components/glasses/TikiGlass.jsx";
 import ToddyGlass from "./components/glasses/ToddyGlass.jsx";
 import WhiskeyShotGlass from "./components/glasses/WhiskeyShotGlass.jsx";
 import WineGlass from "./components/glasses/WineGlass.jsx";
-import glasses from './glasses';
+import glasses from "./glasses";
 
 export {
   Liquid,
