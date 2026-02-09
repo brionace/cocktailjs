@@ -23,7 +23,7 @@ export default function CoupeGlass({
         d={`
           M12 32 Q32 36 52 32 L52 18 Q32 18 12 18 Z 
         `}
-             transform="scale(0.98)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}

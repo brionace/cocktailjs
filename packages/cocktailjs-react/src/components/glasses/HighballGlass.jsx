@@ -21,7 +21,7 @@ export default function HighballGlass({
       {/* Cocktail liquid (via Liquid component) */}
       <Liquid
         d={`M18 10 L46 10 L46 60 L18 60 Z`}
-          transform="scale(0.98)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}

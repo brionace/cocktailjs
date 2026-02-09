@@ -44,7 +44,7 @@ export default function TikiGlass({
       {/* Body liquid (via Liquid component) */}
       <Liquid
         d={`M21 9 L41 9 L41 51 L21 51 Z`}
-          transform="scale(0.98)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}

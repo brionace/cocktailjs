@@ -27,7 +27,7 @@ export default function SingleShotGlass({
       {/* Liquid (curved interior, shorter) */}
       <Liquid
         d={`M23 28 C24.5 36 24.5 40 25 48 L39 48 C39.5 40 39.5 36 41 28 Z`}
-            transform="scale(0.98)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
