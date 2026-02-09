@@ -1,13 +1,17 @@
 import React from "react";
 
-
 export default function CopperMug({
   size = 80,
   strokeWidth = 0.5,
   fill = "#B87333",
 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
+      preserveAspectRatio="xMidYMax slice"
+    >
       {/* Handle: tall and spanning almost full body height */}
       <path
         d="M47 23 C68 23 68 52 46.5 50"
@@ -25,7 +29,7 @@ export default function CopperMug({
           C16 40 16 24 18 16   
           Z
         "
-        transform="scale(0.98)"
+        transform="scale(1)"
         fill={fill}
       />
 

@@ -10,7 +10,12 @@ export default function SingleShotGlass({
   idBase = "SingleShotGlassGrad",
 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
+      preserveAspectRatio="xMidYMax slice"
+    >
       {/* Outline: same curved/flared style as DoubleShot but shorter */}
       <path
         d={"M23 28 C24.5 36 24.5 40 25 48 L39 48 C39.5 40 39.5 36 41 28 Z"}
@@ -22,7 +27,7 @@ export default function SingleShotGlass({
       {/* Liquid (curved interior, shorter) */}
       <Liquid
         d={`M23 28 C24.5 36 24.5 40 25 48 L39 48 C39.5 40 39.5 36 41 28 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}

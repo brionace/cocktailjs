@@ -10,11 +10,16 @@ export default function HurricaneGlass({
   idBase = "HurricaneGlassGrad",
 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
+      preserveAspectRatio="xMidYMax slice"
+    >
       {/* Liquid inside (via Liquid component) */}
       <Liquid
         d={`M24 10 C16 22, 24 38, 28 44 C30 48, 34 48, 36 44 C40 38, 48 22, 40 10 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -22,7 +27,7 @@ export default function HurricaneGlass({
       {/* Original liquid (commented out)
       <path
         d="M24 10 C16 22, 24 38, 28 44 C30 48, 34 48, 36 44 C40 38, 48 22, 40 10 Z"
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

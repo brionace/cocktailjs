@@ -10,7 +10,12 @@ export default function FluteGlass({
   idBase = "FluteGlassGrad",
 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
+      preserveAspectRatio="xMidYMax slice"
+    >
       {/* Correct flute bowl: narrow top → wider middle → narrow base */}
 
       {/* Liquid filling the bowl (3/4 full) */}
@@ -22,7 +27,7 @@ export default function FluteGlass({
           Q32 38 28 36 
           Z
         `}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -36,7 +41,7 @@ export default function FluteGlass({
           Q32 38 28 36 
           Z
         "
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

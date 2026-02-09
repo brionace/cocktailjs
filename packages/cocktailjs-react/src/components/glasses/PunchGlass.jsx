@@ -10,7 +10,12 @@ export default function PunchGlass({
   idBase = "PunchGlassGrad",
 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
+      preserveAspectRatio="xMidYMax slice"
+    >
       <g>
         {/* Compact bowl liquid (via Liquid component) */}
         <Liquid
@@ -22,7 +27,7 @@ export default function PunchGlass({
             L22 18
             Z
           `}
-          transform="scale(0.98)"
+          transform="scale(1)"
           idBase={idBase}
           opacity={0.7}
           liquidFill={liquidFill}
@@ -37,7 +42,7 @@ export default function PunchGlass({
             L22 18
             Z
           `}
-          transform="scale(0.98)"
+          transform="scale(1)"
           className="liquid"
           opacity={0.7}
           fill={liquidFill}

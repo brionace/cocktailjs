@@ -11,7 +11,12 @@ export default function WhiskeyShotGlass({
   ...liquidProps
 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
+      preserveAspectRatio="xMidYMax slice"
+    >
       {/* Cylindrical, straight-sided whiskey shot glass (shorter body, heavy base) */}
       <rect
         x={22}
@@ -26,7 +31,7 @@ export default function WhiskeyShotGlass({
       {/* Liquid (fills interior) */}
       <Liquid
         d={`M22 30 L42 30 L42 48 L22 48 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -38,7 +43,7 @@ export default function WhiskeyShotGlass({
         y={30}
         width={20}
         height={24}
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

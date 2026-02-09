@@ -10,11 +10,16 @@ export default function MartiniGlass({
   idBase = "MartiniGlassGrad",
 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
+      preserveAspectRatio="xMidYMax slice"
+    >
       {/* Cocktail liquid (filled via Liquid component) */}
       <Liquid
         d={`M10 10 L54 10 L32 40 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -22,7 +27,7 @@ export default function MartiniGlass({
       {/* Original cocktail liquid (commented out)
       <path
         d="M10 10 L54 10 L32 40 Z"
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

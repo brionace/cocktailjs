@@ -10,7 +10,12 @@ export default function TikiGlass({
   idBase = "TikiGlassGrad",
 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
+      preserveAspectRatio="xMidYMax slice"
+    >
       {/* Thick base to anchor the glass */}
       <rect x={21.75} y={52} width={20.5} height={2} fill="currentColor" />
 
@@ -39,7 +44,7 @@ export default function TikiGlass({
       {/* Body liquid (via Liquid component) */}
       <Liquid
         d={`M21 9 L41 9 L41 51 L21 51 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}

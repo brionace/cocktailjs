@@ -10,7 +10,12 @@ export default function ParfaitGlass({
   idBase = "ParfaitGlassGrad",
 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
+      preserveAspectRatio="xMidYMax slice"
+    >
       {/* Tall tapered bowl liquid (via Liquid component) */}
       <Liquid
         d={`
@@ -21,7 +26,7 @@ export default function ParfaitGlass({
           Q24 30 22 12
           Z
         `}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -38,7 +43,7 @@ export default function ParfaitGlass({
         "
         className="liquid"
         opacity={0.7}
-        transform="scale(0.98)"
+        transform="scale(1)"
         fill={liquidFill}
       />
       */}

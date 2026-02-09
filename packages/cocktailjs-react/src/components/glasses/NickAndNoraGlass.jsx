@@ -10,11 +10,16 @@ export default function NickAndNoraGlass({
   idBase = "NickAndNoraGlassGrad",
 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
+      preserveAspectRatio="xMidYMax slice"
+    >
       {/* Bowl liquid (via Liquid component) */}
       <Liquid
         d={`M24 38 L24 24 L40 24 L40 38 Q32 40 24 38 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -22,7 +27,7 @@ export default function NickAndNoraGlass({
       {/* Original liquid (commented out)
       <path
         d="M24 38 L24 24 L40 24 L40 38 Q32 40 24 38 Z"
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

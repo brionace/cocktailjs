@@ -13,7 +13,12 @@ export default function PousseCafeGlass({
   const height = Math.floor(size * 1.125);
 
   return (
-    <svg width={size} height={height} viewBox="0 0 64 90">
+    <svg
+      width={size}
+      height={height}
+      viewBox="0 0 64 90"
+      preserveAspectRatio="xMidYMax slice"
+    >
       <g>
         {/* Bowl liquid (rendered via Liquid component) */}
         <Liquid
@@ -24,7 +29,7 @@ export default function PousseCafeGlass({
             Q ${cx} 42 ${cx - 9} 38
             Z
           `}
-          transform="scale(0.98)"
+          transform="scale(1)"
           idBase={idBase}
           opacity={0.7}
           liquidFill={liquidFill}
@@ -38,7 +43,7 @@ export default function PousseCafeGlass({
             Q ${cx} 42 ${cx - 9} 38
             Z
           `}
-          transform="scale(0.98)"
+          transform="scale(1)"
           className="liquid"
           opacity={0.7}
           fill={liquidFill}

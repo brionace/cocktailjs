@@ -12,7 +12,12 @@ export default function GobletGlass({
   const height = Math.round((size * 90) / 80);
 
   return (
-    <svg width={size} height={height} viewBox="0 0 64 90">
+    <svg
+      width={size}
+      height={height}
+      viewBox="0 0 64 90"
+      preserveAspectRatio="xMidYMax slice"
+    >
       {/* Stem: short and stocky, centered on x=32 (lowered to avoid bowl overlap) */}
       <rect
         x={30.5}
@@ -26,7 +31,7 @@ export default function GobletGlass({
       {/* Deep rounded goblet bowl (via Liquid component) */}
       <Liquid
         d={` M19 28 L46 28 Q52 58 32 70 Q12 58 16 28 Z `}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -34,7 +39,7 @@ export default function GobletGlass({
       {/* Original liquid (commented out)
       <path
         d=" M19 28 L46 28 Q52 58 32 70 Q12 58 16 28 Z "
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}
