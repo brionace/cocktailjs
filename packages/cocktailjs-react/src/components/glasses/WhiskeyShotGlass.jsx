@@ -19,10 +19,10 @@ export default function WhiskeyShotGlass({
     >
       {/* Cylindrical, straight-sided whiskey shot glass (shorter body, heavy base) */}
       <rect
-        x={22}
+        x={18}
         y={30}
-        width={20}
-        height={18}
+        width={30}
+        height={24}
         // rx={1}
         stroke="currentColor"
         fill="none"
@@ -30,7 +30,7 @@ export default function WhiskeyShotGlass({
       />
       {/* Liquid (fills interior) */}
       <Liquid
-        d={`M22 30 L42 30 L42 48 L22 48 Z`}
+        d={`M18 30 L48 30 L48 54 L18 54 Z`}
         transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
@@ -41,8 +41,8 @@ export default function WhiskeyShotGlass({
       <rect
         x={22}
         y={30}
-        width={20}
-        height={24}
+        width={30}
+        height={18}
         transform="scale(0.98)"
         className="liquid"
         opacity={0.7}
@@ -51,9 +51,9 @@ export default function WhiskeyShotGlass({
       */}
       {/* Heavy base to suggest weight */}
       <rect
-        x={22}
-        y={48}
-        width={20}
+        x={18}
+        y={54}
+        width={30}
         height={3}
         fill="none"
         stroke="currentColor"
