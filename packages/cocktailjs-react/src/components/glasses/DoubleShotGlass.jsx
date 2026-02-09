@@ -27,7 +27,7 @@ export default function DoubleShotGlass({
       {/* Liquid (curved/flared interior) */}
       <Liquid
         d={`M20 18 C22 30 22 46 22.5 58 L41.5 58 C42.5 46 42.5 30 44 18 Z`}
-        transform="scale(1)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}

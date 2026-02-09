@@ -24,7 +24,7 @@ export default function TankardGlass({
       {/* Inner wall liquid (via Liquid component) */}
       <Liquid
         d={`M14 10 L48 10 L48 44 L14 44 Z`}
-        transform="scale(1)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -35,7 +35,7 @@ export default function TankardGlass({
         y={10}
         width={34}
         height={34}
-        transform="scale(1)"
+        transform="scale(0.98)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

@@ -20,7 +20,7 @@ export default function WineGlass({
       {/* Liquid (via Liquid component) */}
       <Liquid
         d={`M26 26 L38 26 Q44 62 32 62 Q20 62 26 26 Z`}
-        transform="scale(1)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -28,7 +28,7 @@ export default function WineGlass({
       {/* Original liquid (commented out)
       <path
         d="M26 26 L38 26 Q44 62 32 62 Q20 62 26 26 Z"
-        transform="scale(1)"
+        transform="scale(0.98)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

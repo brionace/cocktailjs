@@ -16,7 +16,7 @@ export default function BrandySnifterGlass({
           L44 48 
           Q32 52 20 48 
           Z`}
-        transform="scale(1)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -30,7 +30,7 @@ export default function BrandySnifterGlass({
           Q32 52 20 48 
           Z
         "
-        transform="scale(1)"
+        transform="scale(0.98)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

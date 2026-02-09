@@ -31,7 +31,7 @@ export default function WhiskeyShotGlass({
       {/* Liquid (fills interior) */}
       <Liquid
         d={`M22 30 L42 30 L42 48 L22 48 Z`}
-        transform="scale(1)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -43,7 +43,7 @@ export default function WhiskeyShotGlass({
         y={30}
         width={20}
         height={24}
-        transform="scale(1)"
+        transform="scale(0.98)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}
