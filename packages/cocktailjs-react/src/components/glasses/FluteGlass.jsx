@@ -14,7 +14,7 @@ export default function FluteGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Correct flute bowl: narrow top → wider middle → narrow base */}
 
@@ -27,7 +27,7 @@ export default function FluteGlass({
           Q32 38 28 36 
           Z
         `}
-           transform="scale(0.98)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}

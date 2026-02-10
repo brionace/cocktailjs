@@ -15,7 +15,7 @@ export default function WhiskeyShotGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Cylindrical, straight-sided whiskey shot glass (shorter body, heavy base) */}
       <rect

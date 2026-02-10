@@ -14,7 +14,7 @@ export default function PunchGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       <g>
         {/* Compact bowl liquid (via Liquid component) */}

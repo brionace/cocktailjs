@@ -17,7 +17,7 @@ export default function PousseCafeGlass({
       width={size}
       height={height}
       viewBox="0 0 64 90"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       <g>
         <Liquid

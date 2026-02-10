@@ -14,12 +14,12 @@ export default function PintGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Liquid inside (via Liquid component) */}
       <Liquid
         d={`M18 10 L46 10 L42 54 L22 54 Z`}
-          transform="scale(0.98)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}

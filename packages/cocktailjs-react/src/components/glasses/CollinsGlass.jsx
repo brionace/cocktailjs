@@ -13,7 +13,7 @@ export default function CollinsGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       <Liquid
         d={`M22 10 L42 10 L42 54 L22 54 Z`}

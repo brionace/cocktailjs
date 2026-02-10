@@ -14,7 +14,7 @@ export default function AbsintheGlass({
       width={size}
       height={height}
       viewBox="0 0 64 90"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Combined liquid (single element covering top + bottom bowls) */}
       <Liquid

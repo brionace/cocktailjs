@@ -14,7 +14,7 @@ export default function DoubleShotGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Outline (curved, flaring toward the top) */}
       <path

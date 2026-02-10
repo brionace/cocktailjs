@@ -13,7 +13,7 @@ export default function BrandySnifterGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Combined liquid (single element covering top + bottom bowls) */}
       <Liquid

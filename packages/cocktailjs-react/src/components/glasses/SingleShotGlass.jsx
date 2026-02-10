@@ -14,7 +14,7 @@ export default function SingleShotGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Outline: same curved/flared style as DoubleShot but shorter */}
       <path

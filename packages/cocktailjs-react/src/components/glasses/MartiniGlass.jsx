@@ -14,12 +14,12 @@ export default function MartiniGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Cocktail liquid (filled via Liquid component) */}
-          <Liquid
-            d={`M10 10 L54 10 L32 40 Z`}
-            transform="scale(0.98)"
+      <Liquid
+        d={`M10 10 L54 10 L32 40 Z`}
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}

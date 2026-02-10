@@ -14,12 +14,12 @@ export default function NickAndNoraGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Bowl liquid (via Liquid component) */}
       <Liquid
         d={`M24 38 L24 24 L40 24 L40 38 Q32 40 24 38 Z`}
-          transform="scale(0.98)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}

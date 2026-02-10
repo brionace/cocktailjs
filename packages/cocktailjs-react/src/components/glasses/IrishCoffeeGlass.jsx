@@ -14,7 +14,7 @@ export default function IrishCoffeeGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Rounded handle with proper loop */}
       <path

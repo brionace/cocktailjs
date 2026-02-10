@@ -14,7 +14,7 @@ export default function TikiGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Thick base to anchor the glass */}
       <rect x={21.75} y={52} width={20.5} height={2} fill="currentColor" />

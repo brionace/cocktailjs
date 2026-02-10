@@ -9,13 +9,12 @@ export default function WineGlass({
   strokeWidth = 0.5,
   idBase = "WineGlassGrad",
 }) {
-  const height = Math.round((size * 90) / 80);
   return (
     <svg
       width={size}
-      height={height}
+      height={size}
       viewBox="0 0 64 90"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Liquid (via Liquid component) */}
       <Liquid

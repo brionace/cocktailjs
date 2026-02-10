@@ -14,7 +14,7 @@ export default function TankardGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Heavy base (wide, weighty for stability) */}
       <rect x={13} y={44} width={36} height={4} fill="currentColor" />

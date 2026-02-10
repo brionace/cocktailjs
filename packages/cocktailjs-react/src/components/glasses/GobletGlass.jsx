@@ -16,7 +16,7 @@ export default function GobletGlass({
       width={size}
       height={height}
       viewBox="0 0 64 90"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMax meet"
     >
       {/* Stem: short and stocky, centered on x=32 (lowered to avoid bowl overlap) */}
       <rect
