@@ -27,7 +27,7 @@ export default function PunchGlass({
             L22 18
             Z
           `}
-          transform="scale(1)"
+          transform="scale(0.98)"
           idBase={idBase}
           opacity={0.7}
           liquidFill={liquidFill}
@@ -42,7 +42,7 @@ export default function PunchGlass({
             L22 18
             Z
           `}
-          transform="scale(1)"
+          transform="scale(0.98)"
           className="liquid"
           opacity={0.7}
           fill={liquidFill}

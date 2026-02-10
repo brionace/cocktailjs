@@ -20,7 +20,7 @@ export default function AbsintheGlass({
       <Liquid
         d={`M20 35 L44 35 L42 49 Q32 52 22 49 Z
            M26 50 Q32 50 38 50 L36 60 L28 60 Z`}
-        transform="scale(1)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -29,7 +29,7 @@ export default function AbsintheGlass({
       {/* <path
         d={`M20 35 L44 35 L42 49 Q32 52 22 49 Z
            M26 50 Q32 50 38 50 L36 60 L28 60 Z`}
-        transform="scale(1)"
+        transform="scale(0.98)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

@@ -21,7 +21,7 @@ export default function ToddyGlass({
       {/* Liquid (via Liquid component) */}
       <Liquid
         d={`M22 12 H42 V40 H22 Z`}
-        transform="scale(1)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -29,7 +29,7 @@ export default function ToddyGlass({
       {/* Original liquid (commented out)
       <path
         d="M22 12 H42 V40 H22 Z"
-        transform="scale(1)"
+        transform="scale(0.98)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

@@ -15,7 +15,7 @@ export default function WhiskeyShotGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-       preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid slice"
     >
       {/* Cylindrical, straight-sided whiskey shot glass (shorter body, heavy base) */}
       <rect
@@ -31,7 +31,7 @@ export default function WhiskeyShotGlass({
       {/* Liquid (fills interior) */}
       <Liquid
         d={`M18 30 L48 30 L48 54 L18 54 Z`}
-         transform="scale(1)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}

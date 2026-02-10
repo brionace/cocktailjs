@@ -26,7 +26,7 @@ export default function ParfaitGlass({
           Q24 30 22 12
           Z
         `}
-        transform="scale(1)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -43,7 +43,7 @@ export default function ParfaitGlass({
         "
         className="liquid"
         opacity={0.7}
-        transform="scale(1)"
+          transform="scale(0.98)"
         fill={liquidFill}
       />
       */}

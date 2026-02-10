@@ -5,10 +5,16 @@ import Liquid from "../Liquid";
 export default function BrandySnifterGlass({
   liquidFill = ["#F6D29A", "#D98F3A"],
   strokeWidth = 1,
+  size = 80,
   idBase = "BrandySnifterGlassGrad",
 }) {
   return (
-    <svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMid slice">
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
+      preserveAspectRatio="xMidYMid slice"
+    >
       {/* Combined liquid (single element covering top + bottom bowls) */}
       <Liquid
         d={`M22 28 
@@ -16,7 +22,7 @@ export default function BrandySnifterGlass({
           L44 48 
           Q32 52 20 48 
           Z`}
-        transform="scale(1)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}

@@ -29,7 +29,7 @@ export default function CopperMug({
           C16 40 16 24 18 16   
           Z
         "
-        transform="scale(1)"
+        transform="scale(0.98)"
         fill={fill}
       />
 

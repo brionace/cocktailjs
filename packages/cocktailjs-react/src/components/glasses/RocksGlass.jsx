@@ -19,7 +19,7 @@ export default function RocksGlass({
       {/* Combined liquid (fills interior) */}
       <Liquid
         d={`M14 24 L50 24 L50 58 L14 58 Z`}
-        transform="scale(1)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -30,7 +30,7 @@ export default function RocksGlass({
         y={24}
         width={36}
         height={34}
-        transform="scale(1)"
+        transform="scale(0.98)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

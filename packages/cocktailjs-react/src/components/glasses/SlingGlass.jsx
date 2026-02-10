@@ -31,7 +31,7 @@ export default function SlingGlass({
       {/* Liquid inset for depth (via Liquid component) */}
       <Liquid
         d={`M25 12 L40 12 C41 29 40 46 32 55 C24 46 24 28 24 12 Z`}
-        transform="scale(1)"
+        transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -39,7 +39,7 @@ export default function SlingGlass({
       {/* Original liquid (commented out)
       <path
         d="M25 12 L40 12 C41 29 40 46 32 55 C24 46 24 28 24 12 Z"
-        transform="scale(1)"
+        transform="scale(0.98)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

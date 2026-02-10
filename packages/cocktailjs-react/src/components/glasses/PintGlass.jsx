@@ -19,7 +19,7 @@ export default function PintGlass({
       {/* Liquid inside (via Liquid component) */}
       <Liquid
         d={`M18 10 L46 10 L42 54 L22 54 Z`}
-        transform="scale(1)"
+          transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -27,7 +27,7 @@ export default function PintGlass({
       {/* Original liquid (commented out)
       <path
         d="M18 10 L46 10 L42 54 L22 54 Z"
-        transform="scale(1)"
+          transform="scale(0.98)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}
