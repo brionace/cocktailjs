@@ -10,7 +10,7 @@ export default function CopperMug({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="xMidYMid slice"
     >
       {/* Handle: tall and spanning almost full body height */}
       <path
@@ -29,7 +29,7 @@ export default function CopperMug({
           C16 40 16 24 18 16   
           Z
         "
-        transform="scale(0.98)"
+        transform="scale(1)"
         fill={fill}
       />
 

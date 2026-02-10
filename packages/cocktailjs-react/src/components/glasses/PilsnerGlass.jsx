@@ -13,12 +13,12 @@ export default function PilsnerGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="xMidYMid slice"
     >
       {/* Liquid (via Liquid component) */}
       <Liquid
         d={`M24 10 L40 10 Q38 36 36 50 Q32 54 28 50 Q26 36 24 10 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -26,7 +26,7 @@ export default function PilsnerGlass({
       {/* Original liquid (commented out)
       <path
         d="M24 10 L40 10 Q38 36 36 50 Q32 54 28 50 Q26 36 24 10 Z"
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}
@@ -36,7 +36,7 @@ export default function PilsnerGlass({
       {/* Thick curved base inset between liquid and bottom stroke */}
       <path
         d="M28 50 Q32 55 37 51 L37 56 Q35 56 28.5 56 Z"
-        transform="scale(0.98)"
+        transform="scale(1)"
         fill="currentColor"
         className="base"
       />

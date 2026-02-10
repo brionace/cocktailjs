@@ -14,14 +14,14 @@ export default function HighballGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="xMidYMid slice"
     >
       {/* Glass outline */}
 
       {/* Cocktail liquid (via Liquid component) */}
       <Liquid
         d={`M18 10 L46 10 L46 60 L18 60 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -32,7 +32,7 @@ export default function HighballGlass({
         y={10}
         width={28}
         height={50}
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

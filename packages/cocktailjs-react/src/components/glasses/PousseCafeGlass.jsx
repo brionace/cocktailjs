@@ -17,7 +17,7 @@ export default function PousseCafeGlass({
       width={size}
       height={height}
       viewBox="0 0 64 90"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="xMidYMid slice"
     >
       <g>
         {/* Bowl liquid (rendered via Liquid component) */}
@@ -29,7 +29,7 @@ export default function PousseCafeGlass({
             Q ${cx} 42 ${cx - 9} 38
             Z
           `}
-          transform="scale(0.98)"
+          transform="scale(1)"
           idBase={idBase}
           opacity={0.7}
           liquidFill={liquidFill}
@@ -43,7 +43,7 @@ export default function PousseCafeGlass({
             Q ${cx} 42 ${cx - 9} 38
             Z
           `}
-          transform="scale(0.98)"
+          transform="scale(1)"
           className="liquid"
           opacity={0.7}
           fill={liquidFill}

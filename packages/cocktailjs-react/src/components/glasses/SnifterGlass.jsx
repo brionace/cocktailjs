@@ -14,7 +14,7 @@ export default function SnifterGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="xMidYMid slice"
     >
       {/* Flat rim line */}
       <line
@@ -42,7 +42,7 @@ export default function SnifterGlass({
       {/* Liquid filling the bowl (via Liquid component) */}
       <Liquid
         d={` M22 18 C16 32, 16 46, 32 52 C48 46, 48 32, 42 18 Z `}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -50,7 +50,7 @@ export default function SnifterGlass({
       {/* Original liquid (commented out)
       <path
         d=" M22 18 C16 32, 16 46, 32 52 C48 46, 48 32, 42 18 Z "
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

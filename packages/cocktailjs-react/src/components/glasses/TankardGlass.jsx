@@ -14,7 +14,7 @@ export default function TankardGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="xMidYMid slice"
     >
       {/* Heavy base (wide, weighty for stability) */}
       <rect x={13} y={44} width={36} height={4} fill="currentColor" />
@@ -24,7 +24,7 @@ export default function TankardGlass({
       {/* Inner wall liquid (via Liquid component) */}
       <Liquid
         d={`M14 10 L48 10 L48 44 L14 44 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -35,7 +35,7 @@ export default function TankardGlass({
         y={10}
         width={34}
         height={34}
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

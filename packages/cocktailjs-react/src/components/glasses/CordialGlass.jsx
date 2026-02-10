@@ -9,11 +9,11 @@ export default function CordialGlass({
   idBase = "CordialGlassGrad",
 }) {
   return (
-    <svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMax slice">
+    <svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMid slice">
       {/* Bowl / cup liquid (via Liquid component) */}
       <Liquid
         d={`M30 16 L35 16 Q34 25 31 26 Q30 26 28 16 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}

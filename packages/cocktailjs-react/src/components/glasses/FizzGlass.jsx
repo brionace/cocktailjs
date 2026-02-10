@@ -14,7 +14,7 @@ export default function FizzGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="xMidYMid slice"
     >
       {/* Rim */}
       <path d="M22 10 L42 10" stroke="currentColor" strokeWidth={strokeWidth} />
@@ -26,7 +26,7 @@ export default function FizzGlass({
         d={`
           M22 10 L24 23 L40 23 L42 10 Z 
         `}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -36,7 +36,7 @@ export default function FizzGlass({
         d="
           M22 10 L24 23 L40 23 L42 10 Z 
         "
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

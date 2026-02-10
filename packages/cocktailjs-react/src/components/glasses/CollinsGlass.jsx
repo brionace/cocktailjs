@@ -8,10 +8,10 @@ export default function CollinsGlass({
   idBase = "CollinsGlassGrad",
 }) {
   return (
-    <svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMax slice">
+    <svg viewBox="0 0 64 64" preserveAspectRatio="xMidYMid slice">
       <Liquid
         d={`M22 10 L42 10 L42 54 L22 54 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -23,7 +23,7 @@ export default function CollinsGlass({
         y={11}
         width={18}
         height={42}
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

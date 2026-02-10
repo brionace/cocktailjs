@@ -14,7 +14,7 @@ export default function DemitasseGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="xMidYMid slice"
     >
       {/* Flat-sided cup body (trapezoid) */}
       <path
@@ -27,7 +27,7 @@ export default function DemitasseGlass({
       {/* Cup liquid (via Liquid component) */}
       <Liquid
         d={`M20 24 L24 45 L40 45 L44 24 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -35,7 +35,7 @@ export default function DemitasseGlass({
       {/* Original liquid (commented out)
       <path
         d="M20 24 L24 45 L40 45 L44 24 Z"
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}

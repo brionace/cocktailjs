@@ -16,12 +16,12 @@ export default function MargaritaGlass({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="xMidYMid slice"
     >
       {/* Combined liquid (single element covering top + bottom bowls) */}
       <Liquid
         d={`M14 18 L50 18 Q46 28 36 29 Q30 30 28 29 Q18 28 14 18 Z M28 29 Q32 29 36 29 Q38 34 32 36 Q26 34 28 29 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
@@ -31,7 +31,7 @@ export default function MargaritaGlass({
       {/* <path
         d={`M14 18 L50 18 Q46 28 36 29 Q30 30 28 29 Q18 28 14 18 Z
            M28 29 Q32 29 36 29 Q38 34 32 36 Q26 34 28 29 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         className="liquid"
         opacity={0.7}
         fill="url(#margaritaGrad)"

@@ -10,7 +10,7 @@ export default function JulepCup({
       width={size}
       height={size}
       viewBox="0 0 64 64"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="xMidYMid slice"
     >
       {/* Rim (wider than body) */}
       <rect
@@ -29,7 +29,7 @@ export default function JulepCup({
         width={30}
         height={1}
         rx={1}
-        transform="scale(0.98)"
+        transform="scale(1)"
         opacity={0.7}
         fill={fill}
         strokeWidth={0}
@@ -56,7 +56,7 @@ export default function JulepCup({
           L22 54
           Z
         "
-        transform="scale(0.98)"
+        transform="scale(1)"
         fill={fill}
       />
 
@@ -77,7 +77,7 @@ export default function JulepCup({
         width={24}
         height={1}
         rx={strokeWidth}
-        transform="scale(0.98)"
+        transform="scale(1)"
         fill={fill}
         strokeWidth={0}
       />
@@ -99,7 +99,7 @@ export default function JulepCup({
         width={26}
         height={1}
         rx={strokeWidth}
-        transform="scale(0.98)"
+        transform="scale(1)"
         fill={fill}
         strokeWidth={0}
       />

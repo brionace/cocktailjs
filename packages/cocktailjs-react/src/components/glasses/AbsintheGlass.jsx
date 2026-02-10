@@ -14,13 +14,13 @@ export default function AbsintheGlass({
       width={size}
       height={height}
       viewBox="0 0 64 90"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="xMidYMid slice"
     >
       {/* Combined liquid (single element covering top + bottom bowls) */}
       <Liquid
         d={`M20 35 L44 35 L42 49 Q32 52 22 49 Z
            M26 50 Q32 50 38 50 L36 60 L28 60 Z`}
-        transform="scale(0.98)"
+        transform="scale(1)"
         idBase={idBase}
         opacity={0.7}
         liquidFill={liquidFill}
