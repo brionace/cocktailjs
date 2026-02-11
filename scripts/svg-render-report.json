@@ -1,0 +1,238 @@
+[
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/AbsintheGlass.jsx",
+    "applied": true,
+    "delta": 4,
+    "visualBottom": 78,
+    "targetY": 82
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/BrandySnifterGlass.jsx",
+    "applied": true,
+    "delta": 2,
+    "visualBottom": 56,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/CollinsGlass.jsx",
+    "applied": true,
+    "delta": 1,
+    "visualBottom": 57.000000953674316,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/CopperMug.jsx",
+    "applied": true,
+    "delta": 1,
+    "visualBottom": 57,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/CordialGlass.jsx",
+    "applied": false,
+    "reason": "delta-too-large",
+    "delta": 25,
+    "visualBottom": 33,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/CoupeGlass.jsx",
+    "applied": true,
+    "delta": -3,
+    "visualBottom": 61,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/DemitasseGlass.jsx",
+    "applied": true,
+    "delta": 9,
+    "visualBottom": 49,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/DoubleShotGlass.jsx",
+    "applied": true,
+    "delta": -4,
+    "visualBottom": 62,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/FizzGlass.jsx",
+    "applied": false,
+    "reason": "delta-too-large",
+    "delta": 24,
+    "visualBottom": 34.000000953674316,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/FluteGlass.jsx",
+    "applied": true,
+    "delta": 4,
+    "visualBottom": 53.99999809265137,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/GobletGlass.jsx",
+    "applied": true,
+    "delta": 4,
+    "visualBottom": 77.99999809265137,
+    "targetY": 82
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/HighballGlass.jsx",
+    "applied": true,
+    "delta": -5,
+    "visualBottom": 63.000000953674316,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/HurricaneGlass.jsx",
+    "applied": true,
+    "delta": 0,
+    "visualBottom": 58.000000953674316,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/IrishCoffeeGlass.jsx",
+    "applied": false,
+    "reason": "delta-too-large",
+    "delta": 13,
+    "visualBottom": 45,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/JulepCup.jsx",
+    "applied": true,
+    "delta": 2,
+    "visualBottom": 55.99999809265137,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/MargaritaGlass.jsx",
+    "applied": true,
+    "delta": 10,
+    "visualBottom": 48,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/MartiniGlass.jsx",
+    "applied": true,
+    "delta": -2,
+    "visualBottom": 60.000000953674316,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/NickAndNoraGlass.jsx",
+    "applied": true,
+    "delta": 2,
+    "visualBottom": 56,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/ParfaitGlass.jsx",
+    "applied": true,
+    "delta": 0,
+    "visualBottom": 58.49999809265137,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/PilsnerGlass.jsx",
+    "applied": true,
+    "delta": 2,
+    "visualBottom": 56.000000953674316,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/PintGlass.jsx",
+    "applied": true,
+    "delta": 1,
+    "visualBottom": 57.000000953674316,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/PousseCafeGlass.jsx",
+    "applied": false,
+    "reason": "delta-too-large",
+    "delta": 31,
+    "visualBottom": 50.99999809265137,
+    "targetY": 82
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/PunchGlass.jsx",
+    "applied": false,
+    "reason": "delta-too-large",
+    "delta": 19,
+    "visualBottom": 39,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/RocksGlass.jsx",
+    "applied": true,
+    "delta": -2,
+    "visualBottom": 60,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/SingleShotGlass.jsx",
+    "applied": true,
+    "delta": 6,
+    "visualBottom": 52,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/SlingGlass.jsx",
+    "applied": true,
+    "delta": 1,
+    "visualBottom": 56.99999809265137,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/SnifterGlass.jsx",
+    "applied": true,
+    "delta": 2,
+    "visualBottom": 56,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/SourGlass.jsx",
+    "applied": true,
+    "delta": 3,
+    "visualBottom": 55,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/TankardGlass.jsx",
+    "applied": true,
+    "delta": 9,
+    "visualBottom": 49.000000953674316,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/TikiGlass.jsx",
+    "applied": true,
+    "delta": 3,
+    "visualBottom": 55.000000953674316,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/ToddyGlass.jsx",
+    "applied": true,
+    "delta": 9,
+    "visualBottom": 48.99999809265137,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/WhiskeyShotGlass.jsx",
+    "applied": true,
+    "delta": 0,
+    "visualBottom": 58,
+    "targetY": 58
+  },
+  {
+    "file": "/Users/bace51/development/cocktailjs/packages/cocktailjs-react/src/components/glasses/WineGlass.jsx",
+    "applied": true,
+    "delta": -6,
+    "visualBottom": 88,
+    "targetY": 82
+  }
+]

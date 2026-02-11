@@ -1,0 +1,482 @@
+{
+  "generatedAt": "2026-02-11T11:38:44.397Z",
+  "results": [
+    {
+      "file": "AbsintheGlass.jsx",
+      "viewBoxHeight": 90,
+      "svgBBox": {
+        "x": 24,
+        "y": 76.5,
+        "width": 16,
+        "height": 0.5
+      },
+      "childBBox": null,
+      "childBottom": 77,
+      "targetY": 82,
+      "delta": 5
+    },
+    {
+      "file": "BrandySnifterGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 44,
+        "height": 50
+      },
+      "childBBox": null,
+      "childBottom": 50,
+      "targetY": 58,
+      "delta": 8
+    },
+    {
+      "file": "CollinsGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "childBBox": null,
+      "childBottom": 0,
+      "targetY": 58,
+      "delta": 58
+    },
+    {
+      "file": "CopperMug.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 62.68805694580078,
+        "height": 56
+      },
+      "childBBox": null,
+      "childBottom": 56,
+      "targetY": 58,
+      "delta": 2
+    },
+    {
+      "file": "CordialGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 28,
+        "y": 16,
+        "width": 8,
+        "height": 10
+      },
+      "childBBox": null,
+      "childBottom": 26,
+      "targetY": 58,
+      "delta": 32
+    },
+    {
+      "file": "CoupeGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 11.760000228881836,
+        "y": 17.639999389648438,
+        "width": 40.23999786376953,
+        "height": 42.36000061035156
+      },
+      "childBBox": null,
+      "childBottom": 60,
+      "targetY": 58,
+      "delta": -2
+    },
+    {
+      "file": "DemitasseGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 19.600000381469727,
+        "y": 23.520000457763672,
+        "width": 28.938459396362305,
+        "height": 21.479999542236328
+      },
+      "childBBox": null,
+      "childBottom": 45,
+      "targetY": 58,
+      "delta": 13
+    },
+    {
+      "file": "DoubleShotGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "childBBox": null,
+      "childBottom": 0,
+      "targetY": 58,
+      "delta": 58
+    },
+    {
+      "file": "FizzGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 21.560001373291016,
+        "y": 9.800000190734863,
+        "width": 20.439998626708984,
+        "height": 23.200000762939453
+      },
+      "childBBox": null,
+      "childBottom": 33.000000953674316,
+      "targetY": 58,
+      "delta": 25
+    },
+    {
+      "file": "FluteGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 26,
+        "y": 11.760000228881836,
+        "width": 12,
+        "height": 41.23999786376953
+      },
+      "childBBox": null,
+      "childBottom": 52.99999809265137,
+      "targetY": 58,
+      "delta": 5
+    },
+    {
+      "file": "GobletGlass.jsx",
+      "viewBoxHeight": 90,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 48.66667175292969,
+        "height": 77
+      },
+      "childBBox": null,
+      "childBottom": 77,
+      "targetY": 82,
+      "delta": 5
+    },
+    {
+      "file": "HighballGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "childBBox": null,
+      "childBottom": 0,
+      "targetY": 58,
+      "delta": 58
+    },
+    {
+      "file": "HurricaneGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 20.165441513061523,
+        "y": 9.800000190734863,
+        "width": 23.257577896118164,
+        "height": 47.20000076293945
+      },
+      "childBBox": null,
+      "childBottom": 57.000000953674316,
+      "targetY": 58,
+      "delta": 1
+    },
+    {
+      "file": "IrishCoffeeGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 19.600000381469727,
+        "y": 15.680000305175781,
+        "width": 31.929410934448242,
+        "height": 28.31999969482422
+      },
+      "childBBox": null,
+      "childBottom": 44,
+      "targetY": 58,
+      "delta": 14
+    },
+    {
+      "file": "JulepCup.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 17.639999389648438,
+        "y": 21.560001373291016,
+        "width": 28.360000610351562,
+        "height": 32.439998626708984
+      },
+      "childBBox": null,
+      "childBottom": 54,
+      "targetY": 58,
+      "delta": 4
+    },
+    {
+      "file": "MargaritaGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 24,
+        "y": 45.5,
+        "width": 16,
+        "height": 1.5
+      },
+      "childBBox": null,
+      "childBottom": 47,
+      "targetY": 58,
+      "delta": 11
+    },
+    {
+      "file": "MartiniGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 9.800000190734863,
+        "y": 9.800000190734863,
+        "width": 44.20000076293945,
+        "height": 49.20000076293945
+      },
+      "childBBox": null,
+      "childBottom": 59.000000953674316,
+      "targetY": 58,
+      "delta": -1
+    },
+    {
+      "file": "NickAndNoraGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 23.520000457763672,
+        "y": 23.520000457763672,
+        "width": 16.479999542236328,
+        "height": 31.479999542236328
+      },
+      "childBBox": null,
+      "childBottom": 55,
+      "targetY": 58,
+      "delta": 3
+    },
+    {
+      "file": "ParfaitGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 21.560001373291016,
+        "y": 11.760000228881836,
+        "width": 20.439998626708984,
+        "height": 45.73999786376953
+      },
+      "childBBox": null,
+      "childBottom": 57.49999809265137,
+      "targetY": 58,
+      "delta": 1
+    },
+    {
+      "file": "PilsnerGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 23.520000457763672,
+        "y": 9.800000190734863,
+        "width": 16.479999542236328,
+        "height": 45.20000076293945
+      },
+      "childBBox": null,
+      "childBottom": 55.000000953674316,
+      "targetY": 58,
+      "delta": 3
+    },
+    {
+      "file": "PintGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 17.639999389648438,
+        "y": 9.800000190734863,
+        "width": 28.360000610351562,
+        "height": 44.20000076293945
+      },
+      "childBBox": null,
+      "childBottom": 54.000000953674316,
+      "targetY": 58,
+      "delta": 4
+    },
+    {
+      "file": "PousseCafeGlass.jsx",
+      "viewBoxHeight": 90,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "childBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "childBottom": 0,
+      "targetY": 82,
+      "delta": 82
+    },
+    {
+      "file": "PunchGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 26,
+        "y": 37.5,
+        "width": 12,
+        "height": 0.5
+      },
+      "childBBox": null,
+      "childBottom": 38,
+      "targetY": 58,
+      "delta": 20
+    },
+    {
+      "file": "RocksGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "childBBox": null,
+      "childBottom": 0,
+      "targetY": 58,
+      "delta": 58
+    },
+    {
+      "file": "SingleShotGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "childBBox": null,
+      "childBottom": 0,
+      "targetY": 58,
+      "delta": 58
+    },
+    {
+      "file": "SlingGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 40.31999969482422,
+        "height": 56
+      },
+      "childBBox": null,
+      "childBottom": 56,
+      "targetY": 58,
+      "delta": 2
+    },
+    {
+      "file": "SnifterGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 45.692081451416016,
+        "height": 55
+      },
+      "childBBox": null,
+      "childBottom": 55,
+      "targetY": 58,
+      "delta": 3
+    },
+    {
+      "file": "SourGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 48,
+        "height": 54
+      },
+      "childBBox": null,
+      "childBottom": 54,
+      "targetY": 58,
+      "delta": 4
+    },
+    {
+      "file": "TankardGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 49,
+        "y": 17,
+        "width": 8.25,
+        "height": 20
+      },
+      "childBBox": {
+        "x": 49,
+        "y": 17,
+        "width": 8.25,
+        "height": 20
+      },
+      "childBottom": 37,
+      "targetY": 58,
+      "delta": 21
+    },
+    {
+      "file": "TikiGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "childBBox": null,
+      "childBottom": 0,
+      "targetY": 58,
+      "delta": 58
+    },
+    {
+      "file": "ToddyGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 21.560001373291016,
+        "y": 11.760000228881836,
+        "width": 28.189998626708984,
+        "height": 36.23999786376953
+      },
+      "childBBox": {
+        "x": 43,
+        "y": 16,
+        "width": 6.75,
+        "height": 20
+      },
+      "childBottom": 36,
+      "targetY": 58,
+      "delta": 22
+    },
+    {
+      "file": "WhiskeyShotGlass.jsx",
+      "viewBoxHeight": 64,
+      "svgBBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "childBBox": null,
+      "childBottom": 0,
+      "targetY": 58,
+      "delta": 58
+    },
+    {
+      "file": "WineGlass.jsx",
+      "viewBoxHeight": 90,
+      "svgBBox": {
+        "x": 23.520000457763672,
+        "y": 25.479999542236328,
+        "width": 16.479999542236328,
+        "height": 61.52000045776367
+      },
+      "childBBox": null,
+      "childBottom": 87,
+      "targetY": 82,
+      "delta": -5
+    }
+  ]
+}

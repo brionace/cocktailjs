@@ -20,6 +20,7 @@
     "dev:ui": "pnpm --filter ./packages/cocktail-ui... run dev || echo \"no dev script for cocktail-ui\"",
     "dev": "sh -c \"node server.js & node -r @babel/register scripts/watch-and-render.js\"",
     "dev:with-playground": "sh -c \"node server.js & node -r @babel/register scripts/watch-and-render.js & pnpm --filter ./packages/cocktailjs-react... run dev\"",
+    "align:svgs": "node scripts/render-and-align.cjs",
     "render:svgs": "node scripts/render-components-to-svgs.cjs",
     "sync:liquid": "node scripts/sync-liquid.js",
     "sync:liquid:watch": "node scripts/sync-liquid.js --watch",

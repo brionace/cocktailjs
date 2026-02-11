@@ -3,11 +3,11 @@ import React from "react";
 import Liquid from "../Liquid";
 import { getStrokeColor } from "../../utils/theme";
 
-export default function FizzGlass({
+export default function DemitasseGlass({
   liquidFill = null,
   size = 80,
   strokeWidth = 0.5,
-  idBase = "FizzGlassGrad",
+  idBase = "DemitasseGlassGrad",
 }) {
   return (
     <svg
@@ -18,16 +18,17 @@ export default function FizzGlass({
     >
 <g transform="translate(0,25)">
 
-      {/* Rim */}
-      <path d="M22 10 L42 10" stroke="currentColor" strokeWidth={strokeWidth} />
-
-      {/* Straight-sided tall bowl */}
-
-      {/* Liquid (fills ~80% of glass) */}
+      {/* Flat-sided cup body (trapezoid) */}
+      <path
+        d="M20 24 L24 45 L40 45 L44 24 Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinejoin="miter"
+        strokeWidth={strokeWidth}
+      />
+      {/* Cup liquid (via Liquid component) */}
       <Liquid
-        d={`
-          M22 10 L24 23 L40 23 L42 10 Z 
-        `}
+        d={`M20 24 L24 45 L40 45 L44 24 Z`}
         transform="scale(0.98)"
         idBase={idBase}
         opacity={0.7}
@@ -35,37 +36,23 @@ export default function FizzGlass({
       />
       {/* Original liquid (commented out)
       <path
-        d="
-          M22 10 L24 23 L40 23 L42 10 Z 
-        "
+        d="M20 24 L24 45 L40 45 L44 24 Z"
         transform="scale(0.98)"
         className="liquid"
         opacity={0.7}
         fill={liquidFill}
       />
       */}
-
+      {/* Flat handle (simple arc) */}
       <path
-        d="M22 10 L24 23 L40 23 L42 10 Z"
+        d="M43 30 Q55 30 41 40"
+        stroke="currentColor"
         fill="none"
-        stroke="currentColor"
         strokeWidth={strokeWidth}
       />
-
-      {/* Stem (Fizz glasses often have no stem; include a tiny centered one) */}
-      <rect
-        x={32}
-        y={23}
-        width={1}
-        height={10}
-        fill="currentColor"
-        stroke="currentColor"
-        strokeWidth={strokeWidth}
-      />
-
-      {/* Base: thin curved foot */}
+      {/* Thick cup base */}
       <path
-        d="M26 33 Q32 32 38 33 L38 33 L26 33 Z"
+        d={"M24 45 Q32 45 40 45 L40 48 L24 48 Z"}
         fill="currentColor"
         stroke="currentColor"
         strokeWidth={strokeWidth}

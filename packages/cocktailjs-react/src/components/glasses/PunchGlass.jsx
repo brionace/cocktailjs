@@ -16,7 +16,7 @@ export default function PunchGlass({
       viewBox="0 0 64 64"
       preserveAspectRatio="xMidYMax meet"
     >
-      <g>
+      <g transform="translate(0,20)">
         {/* Compact bowl liquid (via Liquid component) */}
         <Liquid
           d={`

@@ -12,7 +12,7 @@ export default function CopperMug({
       viewBox="0 0 64 64"
       preserveAspectRatio="xMidYMax meet"
     >
-<g transform="translate(0,1)">
+<g transform="translate(0,4.12)">
 
       {/* Handle: tall and spanning almost full body height */}
       <path

@@ -16,6 +16,8 @@ export default function IrishCoffeeGlass({
       viewBox="0 0 64 64"
       preserveAspectRatio="xMidYMax meet"
     >
+<g transform="translate(0,14)">
+
       {/* Rounded handle with proper loop */}
       <path
         d=" M42 18 Q60 20 44 30 "
@@ -87,6 +89,8 @@ export default function IrishCoffeeGlass({
         stroke="currentColor"
         strokeWidth={strokeWidth}
       />
-    </svg>
+    
+</g>
+</svg>
   );
 }

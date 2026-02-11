@@ -16,6 +16,8 @@ export default function CordialGlass({
       viewBox="0 0 64 64"
       preserveAspectRatio="xMidYMax meet"
     >
+<g transform="translate(0,32)">
+
       {/* Bowl / cup liquid (via Liquid component) */}
       <Liquid
         d={`M30 16 L35 16 Q34 25 31 26 Q30 26 28 16 Z`}
@@ -62,6 +64,8 @@ export default function CordialGlass({
         stroke="currentColor"
         strokeWidth={strokeWidth}
       />
-    </svg>
+    
+</g>
+</svg>
   );
 }
