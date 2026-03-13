@@ -1,6 +1,6 @@
 {
   "name": "@bace51/cocktailjs-reactnative",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": false,
   "description": "React Native components for rendering cocktail glasses and liquids as SVG.",
   "keywords": [
