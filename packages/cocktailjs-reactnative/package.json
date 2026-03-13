@@ -21,8 +21,16 @@
   },
   "license": "MIT",
   "author": "brionace",
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs.js"
+    },
+    "./*": "./dist/*",
+    "./dist/*": "./dist/*"
+  },
   "main": "dist/index.cjs.js",
-  "module": "dist/index.mjs",
   "files": [
     "dist"
   ],
@@ -32,22 +40,19 @@
     "prepare": "npm run build && npm run build:cjs",
     "test": "echo \"No tests specified\" && exit 0"
   },
-  "peerDependencies": {
-    "react": "^16.8 || ^17 || ^18 || ^19",
-    "react-native-svg": ">=12"
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-native-svg": "^15.15.3"
   },
   "devDependencies": {
     "esbuild": "^0.18.0"
   },
+  "peerDependencies": {
+    "react": "^16.8 || ^17 || ^18 || ^19",
+    "react-native-svg": ">=12"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs.js"
-    },
-    "./*": "./dist/*",
-    "./dist/*": "./dist/*"
-  }
+  "module": "dist/index.mjs"
 }
