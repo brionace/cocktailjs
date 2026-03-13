@@ -26,6 +26,8 @@
     "sync:liquid:watch": "node scripts/sync-liquid.js --watch",
     "sync:assets": "node scripts/sync-assets.js",
     "sync:assets:watch": "node scripts/sync-assets.js --watch",
+    "sync:reactnative": "node scripts/sync-to-reactnative.js",
+    "sync:assets-dir": "node scripts/sync-to-assets.js",
     "export:react": "node scripts/export-to-cocktailjs-react.js",
     "check:svgs": "node scripts/check-manifest-svgs.js",
     "start": "node server.js"

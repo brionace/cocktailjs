@@ -5,7 +5,14 @@ const argv = process.argv.slice(2);
 const watchMode = argv.includes("--watch");
 
 const repoRoot = path.resolve(__dirname, "..");
-const src = path.join(repoRoot, "assets", "Liquid.js");
+const src = path.join(
+  repoRoot,
+  "packages",
+  "cocktail-ui",
+  "src",
+  "components",
+  "Liquid.jsx",
+);
 const dest = path.join(
   repoRoot,
   "packages",
@@ -18,39 +25,8 @@ const dest = path.join(
 function transformSource(srcText) {
   let out = String(srcText);
 
-  // Replace react-native-svg import with plain React import
-  out = out.replace(
-    /import\s+React[\s\S]*?;\s*\n\s*import\s+Svg[\s\S]*?from\s+"react-native-svg";?/m,
-    'import React from "react";\n',
-  );
-
-  // Map React Native SVG components to DOM SVG tags
-  const tagMap = {
-    Defs: "defs",
-    LinearGradient: "linearGradient",
-    Stop: "stop",
-    Path: "path",
-    Svg: "svg",
-  };
-  for (const [from, to] of Object.entries(tagMap)) {
-    // opening tags
-    const openRe = new RegExp(`<\\s*${from}\\b`, "g");
-    out = out.replace(openRe, `<${to}`);
-    // closing tags
-    const closeRe = new RegExp(`<\\/\\s*${from}\\s*>`, "g");
-    out = out.replace(closeRe, `</${to}>`);
-  }
-
-  // Replace JSX component names in self-closing form (e.g. <Stop />)
-  // (covered by opening tag replace above)
-
-  // Some tiny cleanups: prefer double quotes consistently for imports
-  out = out.replace(
-    /export default function\s+Liquid\(/,
-    "export default function Liquid(",
-  );
-
-  // Ensure file ends with a single newline
+  // Source is now DOM SVG (from cocktail-ui), same format as destination.
+  // No tag conversion needed — just normalize line endings.
   out = out.replace(/\r\n/g, "\n");
   if (!out.endsWith("\n")) out += "\n";
   return out;

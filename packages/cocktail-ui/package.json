@@ -5,7 +5,9 @@
   "keywords": [
     "cocktail",
     "ui",
-    "cocktailjs"
+    "cocktailjs",
+    "react",
+    "svg"
   ],
   "homepage": "https://github.com/brionace/cocktailjs#readme",
   "bugs": {

@@ -2,17 +2,17 @@ const fs = require("fs");
 const path = require("path");
 
 try {
-  const assetsRoot = path.join(process.cwd(), "assets");
+  const sourceRoot = path.join(process.cwd(), "packages", "cocktail-ui", "svgs");
   const svgsRoot = path.join(process.cwd(), "public", "svgs");
   const manifest = {};
 
   for (const type of ["glasses"]) {
-    const srcDir = path.join(assetsRoot, type);
+    const srcDir = path.join(sourceRoot, type);
     if (!fs.existsSync(srcDir)) continue;
     manifest[type] = manifest[type] || {};
     for (const name of fs.readdirSync(srcDir)) {
       const ext = path.extname(name).toLowerCase();
-      if (![".js", ".jsx", ".ts", ".tsx"].includes(ext)) continue;
+      if (ext !== ".svg") continue;
       const base = path.basename(name, ext);
       const candidate = path.join(svgsRoot, type, `${base}.svg`);
       if (fs.existsSync(candidate)) {

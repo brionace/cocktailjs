@@ -1,0 +1,53 @@
+{
+  "name": "@bace51/cocktailjs-reactnative",
+  "version": "1.0.0",
+  "private": false,
+  "description": "React Native components for rendering cocktail glasses and liquids as SVG.",
+  "keywords": [
+    "cocktail",
+    "cocktails",
+    "react-native",
+    "svg",
+    "liquid"
+  ],
+  "homepage": "https://github.com/brionace/cocktailjs#readme",
+  "bugs": {
+    "url": "https://github.com/brionace/cocktailjs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brionace/cocktailjs.git",
+    "directory": "packages/cocktailjs-reactnative"
+  },
+  "license": "MIT",
+  "author": "brionace",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "esbuild src/index.js --bundle --outfile=dist/index.mjs --format=esm --platform=neutral --minify --external:react --external:react-native-svg",
+    "build:cjs": "esbuild src/index.js --bundle --outfile=dist/index.cjs.js --format=cjs --platform=node --external:react --external:react-native-svg",
+    "prepare": "npm run build && npm run build:cjs",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "peerDependencies": {
+    "react": "^16.8 || ^17 || ^18 || ^19",
+    "react-native-svg": ">=12"
+  },
+  "devDependencies": {
+    "esbuild": "^0.18.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs.js"
+    },
+    "./*": "./dist/*",
+    "./dist/*": "./dist/*"
+  }
+}
