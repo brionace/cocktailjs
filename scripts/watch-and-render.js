@@ -31,7 +31,12 @@ watcher.on("change", (file) => {
     console.log("Copied", rel, "->", out);
 
     // rebuild manifest using cocktail-ui svgs as authoritative source
-    const sourceRoot = path.join(process.cwd(), "packages", "cocktail-ui", "svgs");
+    const sourceRoot = path.join(
+      process.cwd(),
+      "packages",
+      "cocktail-ui",
+      "svgs",
+    );
     const svgsRoot = path.join(process.cwd(), "public", "svgs");
     const manifest = {};
     for (const t of ["glasses"]) {

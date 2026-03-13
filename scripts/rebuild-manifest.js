@@ -2,7 +2,12 @@ const fs = require("fs");
 const path = require("path");
 
 try {
-  const sourceRoot = path.join(process.cwd(), "packages", "cocktail-ui", "svgs");
+  const sourceRoot = path.join(
+    process.cwd(),
+    "packages",
+    "cocktail-ui",
+    "svgs",
+  );
   const svgsRoot = path.join(process.cwd(), "public", "svgs");
   const manifest = {};
 
