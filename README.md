@@ -66,6 +66,70 @@ USE_DIST=1 pnpm --filter ./packages/cocktailjs-react run dev
 
 Open an issue on the repository for feature requests, bug reports, or general help.
 
+## API Overview (Packages)
+
+### Glasses available in component packages
+
+The following glasses are exported by both package variants:
+
+- `packages/cocktailjs-react`
+- `packages/cocktailjs-reactnative`
+
+Glass list:
+
+- AbsintheGlass
+- BrandySnifterGlass
+- CollinsGlass
+- CopperMug
+- CordialGlass
+- CoupeGlass
+- DemitasseGlass
+- DoubleShotGlass
+- FizzGlass
+- FluteGlass
+- GobletGlass
+- HighballGlass
+- HurricaneGlass
+- IrishCoffeeGlass
+- JulepCup
+- MargaritaGlass
+- MartiniGlass
+- NickAndNoraGlass
+- ParfaitGlass
+- PilsnerGlass
+- PintGlass
+- PousseCafeGlass
+- PunchGlass
+- RocksGlass
+- SingleShotGlass
+- SlingGlass
+- SnifterGlass
+- SourGlass
+- TankardGlass
+- TikiGlass
+- ToddyGlass
+- WhiskeyShotGlass
+- WineGlass
+
+### Methods and props accepted by package
+
+- `packages/cocktailjs-react`
+	- Exports: `Liquid`, all glasses above, and `glasses` metadata.
+	- Glass props: `size`, `liquidFill`, `strokeWidth` (shared), plus selective `idBase`, `garnish`, `fill`.
+	- `WhiskeyShotGlass` forwards additional props to `Liquid`.
+	- `Liquid` props: `d`, `transform`, `liquidFill`, `liquidStyle`, `gradientAttr`, `opacity`, `idBase`, `highlight`, `highlightColor`, `level`, `stopPositions`, `mixed`, `mixedBlend`, `mixedOpacity`.
+
+- `packages/cocktailjs-reactnative`
+	- Exports: `Liquid`, all glasses above, and `glasses` metadata.
+	- Glass props: `size`, `liquidFill`, `strokeWidth` (shared), plus selective `idBase`, `garnish`, `fill`.
+	- `WhiskeyShotGlass` forwards additional props to `Liquid`.
+	- `Liquid` props: `d`, `transform`, `liquidFill`, `liquidStyle`, `gradientAttr`, `opacity`, `idBase`, `highlight`, `highlightColor`, `level`, `stopPositions`, `mixed`, `mixedBlend`, `mixedOpacity`.
+
+- `packages/cocktail-ui`
+	- Methods: `list()`, `listByType(type)`, `getSvg(name, type)`, `get(name, type)`.
+	- Exposed properties: `name`, `version`, `assets`.
+	- Glass SVG assets: same primary set as above, with additional legacy/alias files (`Highball`, `Coupe`, `ShotGlass`).
+
 ---
 
 If you'd like, I can also:

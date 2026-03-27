@@ -29,22 +29,83 @@ export default function Example() {
 }
 ```
 
-## Props
+## Available Glasses
 
-- `size` (number): width/height in pixels for glass components.
-- `liquidFill` (string | string[]): color or gradient colors used for the liquid.
-- `level` (number): for `Liquid`, fill level from `0` (empty) to `1` (full).
-- `highlight` (boolean): for `Liquid`, enable a highlight overlay.
-- `highlightColor` (string): color used for the highlight.
-- `stopPositions` (array): optional gradient stop offsets for `Liquid`.
+- AbsintheGlass
+- BrandySnifterGlass
+- CollinsGlass
+- CopperMug
+- CordialGlass
+- CoupeGlass
+- DemitasseGlass
+- DoubleShotGlass
+- FizzGlass
+- FluteGlass
+- GobletGlass
+- HighballGlass
+- HurricaneGlass
+- IrishCoffeeGlass
+- JulepCup
+- MargaritaGlass
+- MartiniGlass
+- NickAndNoraGlass
+- ParfaitGlass
+- PilsnerGlass
+- PintGlass
+- PousseCafeGlass
+- PunchGlass
+- RocksGlass
+- SingleShotGlass
+- SlingGlass
+- SnifterGlass
+- SourGlass
+- TankardGlass
+- TikiGlass
+- ToddyGlass
+- WhiskeyShotGlass
+- WineGlass
 
-- `mixed` (boolean): render a visually-mixed liquid. Subdues strong gradients and biases toward a dominant color while still hinting original colors.
-- `mixedBlend` (number 0..1): how much original colors remain when `mixed` is true (0 = pure dominant color, 1 = original colors). Default ~0.25.
-- `mixedOpacity` (number 0..1): opacity applied to synthesized mixed gradient stops (default ~0.85).
+## Props Accepted
 
-Notes about `mixed` vs gradients
+Glass component props (all glasses):
 
-- When `mixed` is `true`, `Liquid` will choose a dominant color (highest saturation) and blend other stops toward it, reducing stop opacity so hints of the original palette remain. This produces a more natural "already mixed" appearance.
+- `size` (number): rendered width/height. Default is usually `80` (some shot variants default to `64`).
+- `liquidFill` (string | string[]): liquid color or gradient stops.
+- `strokeWidth` (number): outline stroke width.
+
+Glass component props (supported by specific glasses):
+
+- `idBase` (string): base id used for internal liquid gradient ids.
+- `garnish` (any): accepted by some glass components (for example `MartiniGlass`, `HurricaneGlass`, `NickAndNoraGlass`, `PintGlass`).
+- `fill` (string): accepted by non-liquid metal/body components (for example `CopperMug`, `JulepCup`).
+
+Glass component passthrough:
+
+- `WhiskeyShotGlass` forwards additional props to `Liquid` via rest props (`...liquidProps`).
+
+Liquid component props (`Liquid` export):
+
+- `d` (string): SVG path data for liquid shape.
+- `transform` (string): optional SVG transform applied to the liquid path.
+- `liquidFill` (string | string[] | null): fallback liquid color input.
+- `liquidStyle` (object | null): explicit style object for the liquid path.
+- `gradientAttr` (string | string[] | null): external gradient id (`#id`) or gradient stop colors.
+- `opacity` (number): liquid opacity. Default `0.7`.
+- `idBase` (string): gradient id base. Default `"liquidGrad"`.
+- `highlight` (`"liquid" | "ice" | "all" | null`): highlight mode.
+- `highlightColor` (string): highlight stop color. Default `"#fff7c0"`.
+- `level` (number `0..1`): vertical fill level. Default `1`.
+- `stopPositions` (number[] | null): explicit normalized stop offsets (`0..1`).
+- `mixed` (boolean): blend gradient toward dominant color.
+- `mixedBlend` (number `0..1`): original-color retention when mixed. Default `0.25`.
+- `mixedOpacity` (number `0..1`): opacity for synthesized mixed gradient stops. Default `0.85`.
+
+## Methods / Exports
+
+- No class-style methods are exposed; this package exports React components and data.
+- Named exports: `Liquid`, all glass components listed above, and `glasses`.
+- `glasses` export: array of `{ name, about }` metadata entries.
+- Default export: object containing `Liquid`, all glass components, and `glasses`.
 
 ## Notes
 
