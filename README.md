@@ -114,21 +114,21 @@ Glass list:
 ### Methods and props accepted by package
 
 - `packages/cocktailjs-react`
-	- Exports: `Liquid`, all glasses above, and `glasses` metadata.
-	- Glass props: `size`, `liquidFill`, `strokeWidth` (shared), plus selective `idBase`, `garnish`, `fill`.
-	- `WhiskeyShotGlass` forwards additional props to `Liquid`.
-	- `Liquid` props: `d`, `transform`, `liquidFill`, `liquidStyle`, `gradientAttr`, `opacity`, `idBase`, `highlight`, `highlightColor`, `level`, `stopPositions`, `mixed`, `mixedBlend`, `mixedOpacity`.
+  - Exports: `Liquid`, all glasses above, and `glasses` metadata.
+  - Glass props: `size`, `liquidFill`, `strokeWidth` (shared), plus selective `idBase`, `garnish`, `fill`.
+  - `WhiskeyShotGlass` forwards additional props to `Liquid`.
+  - `Liquid` props: `d`, `transform`, `liquidFill`, `liquidStyle`, `gradientAttr`, `opacity`, `idBase`, `highlight`, `highlightColor`, `level`, `stopPositions`, `mixed`, `mixedBlend`, `mixedOpacity`.
 
 - `packages/cocktailjs-reactnative`
-	- Exports: `Liquid`, all glasses above, and `glasses` metadata.
-	- Glass props: `size`, `liquidFill`, `strokeWidth` (shared), plus selective `idBase`, `garnish`, `fill`.
-	- `WhiskeyShotGlass` forwards additional props to `Liquid`.
-	- `Liquid` props: `d`, `transform`, `liquidFill`, `liquidStyle`, `gradientAttr`, `opacity`, `idBase`, `highlight`, `highlightColor`, `level`, `stopPositions`, `mixed`, `mixedBlend`, `mixedOpacity`.
+  - Exports: `Liquid`, all glasses above, and `glasses` metadata.
+  - Glass props: `size`, `liquidFill`, `strokeWidth` (shared), plus selective `idBase`, `garnish`, `fill`.
+  - `WhiskeyShotGlass` forwards additional props to `Liquid`.
+  - `Liquid` props: `d`, `transform`, `liquidFill`, `liquidStyle`, `gradientAttr`, `opacity`, `idBase`, `highlight`, `highlightColor`, `level`, `stopPositions`, `mixed`, `mixedBlend`, `mixedOpacity`.
 
 - `packages/cocktail-ui`
-	- Methods: `list()`, `listByType(type)`, `getSvg(name, type)`, `get(name, type)`.
-	- Exposed properties: `name`, `version`, `assets`.
-	- Glass SVG assets: same primary set as above, with additional legacy/alias files (`Highball`, `Coupe`, `ShotGlass`).
+  - Methods: `list()`, `listByType(type)`, `getSvg(name, type)`, `get(name, type)`.
+  - Exposed properties: `name`, `version`, `assets`.
+  - Glass SVG assets: same primary set as above, with additional legacy/alias files (`Highball`, `Coupe`, `ShotGlass`).
 
 ---
 

@@ -60,26 +60,26 @@ console.log(cocktailUI.name);
 ## Methods Accepted
 
 - `list()`
-	- Returns: `string[]`
-	- Description: lists all asset keys available in the generated assets map.
+  - Returns: `string[]`
+  - Description: lists all asset keys available in the generated assets map.
 
 - `listByType(type)`
-	- Args:
-		- `type` (string): asset type prefix such as `"glasses"`.
-	- Returns: `string[]`
-	- Description: lists keys matching the provided type prefix.
+  - Args:
+    - `type` (string): asset type prefix such as `"glasses"`.
+  - Returns: `string[]`
+  - Description: lists keys matching the provided type prefix.
 
 - `getSvg(name, type)`
-	- Args:
-		- `name` (string): full key (`"glasses/MartiniGlass"`) or short name (`"MartiniGlass"`).
-		- `type` (string, optional): type prefix helper (`"glasses"`, etc.).
-	- Returns: `string | null`
-	- Description: returns raw SVG string for the matching key, or `null` when unavailable.
+  - Args:
+    - `name` (string): full key (`"glasses/MartiniGlass"`) or short name (`"MartiniGlass"`).
+    - `type` (string, optional): type prefix helper (`"glasses"`, etc.).
+  - Returns: `string | null`
+  - Description: returns raw SVG string for the matching key, or `null` when unavailable.
 
 - `get(name, type)`
-	- Args: same as `getSvg(name, type)`.
-	- Returns: `string | null`
-	- Description: convenience alias for `getSvg`.
+  - Args: same as `getSvg(name, type)`.
+  - Returns: `string | null`
+  - Description: convenience alias for `getSvg`.
 
 ## Exports / Properties
 
